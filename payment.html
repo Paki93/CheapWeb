@@ -3,129 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CheapWeb | Payment</title>
+    <title>CheapWeb - Secure Payment</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* --- Page Style (in case not in style.css yet) --- */
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background-color: #122c53;
-        color: white;
-      }
-
-      nav {
-        background: #0e2240;
-        padding: 15px 0;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        margin: auto;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: white;
-      }
-
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        padding: 6px 12px;
-        transition: 0.3s;
-      }
-
-      .nav-links a:hover,
-      .nav-links a.active {
-        background-color: white;
-        color: #122c53;
-        border-radius: 6px;
-      }
-
-      .payment-container {
-        background-color: white;
-        color: #122c53;
-        width: 90%;
-        max-width: 600px;
-        margin: 60px auto;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .payment-container h2 {
-        text-align: center;
-        margin-bottom: 25px;
-      }
-
-      .service-summary {
-        background-color: #f2f4f8;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 25px;
-      }
-
-      label {
-        display: block;
-        margin: 12px 0 6px;
-        font-weight: 600;
-      }
-
-      input,
-      select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        font-size: 1rem;
-      }
-
-      .card-info {
-        display: flex;
-        gap: 10px;
-      }
-
-      .card-info input {
-        flex: 1;
-      }
-
-      .pay-btn {
-        background-color: #122c53;
-        color: white;
-        width: 100%;
-        border: none;
-        padding: 14px;
-        font-size: 1.1rem;
-        margin-top: 25px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .pay-btn:hover {
-        background-color: #0e2240;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        background-color: #0e2240;
-        color: white;
-      }
-    </style>
   </head>
 
   <body>
@@ -135,79 +14,120 @@
         <h1 class="logo">CheapWeb</h1>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="booking.html">Booking</a></li>
-          <li><a href="payment.html" class="active">Payment</a></li>
+          <li><a href="sign-up.html">Sign Up</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- Payment Form -->
-    <div class="payment-container">
-      <h2>Secure Payment</h2>
+    <!-- Payment Section -->
+    <section class="payment-section">
+      <div class="container">
+        <h2>Complete Your Payment</h2>
+        <p>
+          Choose your website package below to make a secure payment via Stripe.
+        </p>
 
-      <div class="service-summary">
-        <p><strong>Selected Plan:</strong> Personalized Website</p>
-        <p><strong>Price:</strong> £49 / month</p>
-      </div>
-
-      <form id="payment-form">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required />
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="card-number">Card Number</label>
-        <input
-          type="text"
-          id="card-number"
-          name="card-number"
-          maxlength="19"
-          placeholder="1234 5678 9012 3456"
-          required
-        />
-
-        <div class="card-info">
-          <div>
-            <label for="exp-date">Expiry (MM/YY)</label>
-            <input
-              type="text"
-              id="exp-date"
-              name="exp-date"
-              placeholder="MM/YY"
-              required
-            />
+        <div class="payment-options">
+          <div class="payment-card">
+            <h3>Standard Website</h3>
+            <p>Perfect for small businesses or individuals.</p>
+            <p class="price">£29/month</p>
+            <a
+              href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01"
+              target="_blank"
+              class="btn-pay"
+              >Pay £29</a
+            >
           </div>
 
-          <div>
-            <label for="cvv">CVV</label>
-            <input
-              type="text"
-              id="cvv"
-              name="cvv"
-              maxlength="4"
-              placeholder="123"
-              required
-            />
+          <div class="payment-card">
+            <h3>Personalised Website</h3>
+            <p>Fully custom design tailored to your brand.</p>
+            <p class="price">£49/month</p>
+            <a
+              href="https://buy.stripe.com/aFa3cw3opceA3th3jY83C00"
+              target="_blank"
+              class="btn-pay"
+              >Pay £49</a
+            >
+          </div>
+
+          <div class="payment-card">
+            <h3>High-Level Software</h3>
+            <p>Powerful systems with advanced integrations.</p>
+            <p class="price">£99/month</p>
+            <a
+              href="https://buy.stripe.com/4gM28s3op7YkaVJg6K83C02"
+              target="_blank"
+              class="btn-pay"
+              >Pay £99</a
+            >
           </div>
         </div>
+      </div>
+    </section>
 
-        <button type="submit" class="pay-btn">Pay Now</button>
-      </form>
-    </div>
-
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+      <p>© 2025 CheapWeb. All rights reserved.</p>
     </footer>
 
-    <script>
-      document
-        .getElementById("payment-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("Payment submitted successfully! (Demo Only)");
-        });
-    </script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        color: #122c53;
+      }
+      .payment-section {
+        padding: 80px 20px;
+        text-align: center;
+      }
+      .payment-options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .payment-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        transition: transform 0.2s;
+      }
+      .payment-card:hover {
+        transform: translateY(-5px);
+      }
+      .price {
+        font-size: 1.5rem;
+        color: #2599dd;
+        font-weight: bold;
+      }
+      .btn-pay {
+        display: inline-block;
+        margin-top: 15px;
+        background: #122c53;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .btn-pay:hover {
+        background: #2599dd;
+      }
+      footer {
+        text-align: center;
+        background: #122c53;
+        color: white;
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+    </style>
   </body>
 </html>
