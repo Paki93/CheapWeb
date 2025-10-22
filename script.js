@@ -6,4 +6,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     this.reset();
 });
 
-
+//Add this small JS snippet for mobile nav toggle:
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('show');
+  });
