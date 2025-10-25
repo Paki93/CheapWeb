@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheapWeb Reviews</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f8f9fa;
+        margin: 0;
+        color: #202124;
+      }
+
+      header {
+        background: #122c53;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      main {
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 0 15px;
+      }
+
+      .review-form {
+        background: #fff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 35px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 12px;
+        font-size: 1rem;
+      }
+
+      textarea {
+        min-height: 70px;
+        resize: vertical;
+      }
+
+      /* Stars for rating */
+      .stars {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+
+      .star {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .star:hover {
+        transform: scale(1.2);
+      }
+
+      .star.active {
+        color: gold;
+      }
+
+      .save-btn {
+        width: 100%;
+        background: #122c53;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      .save-btn:hover {
+        background: #1f4588;
+      }
+
+      .average-rating {
+        text-align: center;
+        margin-bottom: 25px;
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .average-stars {
+        font-size: 1.6rem;
+        color: gold;
+        letter-spacing: 3px;
+      }
+
+      #displayBox {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .entry-box {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .entry-header strong {
+        font-size: 1rem;
+      }
+
+      .entry-header span {
+        color: gold;
+        font-size: 1rem;
+      }
+
+      .entry-box p {
+        margin: 0;
+        color: #444;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 600px) {
+        .star {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CheapWeb Reviews</h1>
+    </header>
+
+    <main>
+      <div class="average-rating">
+        <div id="avgStars" class="average-stars">☆☆☆☆☆</div>
+        <h3 id="avgText">Average Rating: 0.0 / 5</h3>
+        <p id="avgCount">No reviews yet.</p>
+      </div>
+
+      <div class="review-form">
+        <h2>Leave a Review</h2>
+        <input type="text" id="username" placeholder="Your Name" />
+        <textarea id="comment" placeholder="Write your comment..."></textarea>
+        <div class="stars" id="stars">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <button class="save-btn" onclick="saveEntry()">Submit Review</button>
+      </div>
+
+      <div id="displayBox"></div>
+    </main>
+    <!-- Sticky Call Button -->
+    <a href="tel:+447540296005" class="call-btn">📞 Call Now</a>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+    </footer>
+
+    <script>
+      let rating = 0;
+      const stars = document.querySelectorAll(".star");
+      const avgStars = document.getElementById("avgStars");
+      const avgText = document.getElementById("avgText");
+      const avgCount = document.getElementById("avgCount");
+
+      stars.forEach((star) => {
+        star.addEventListener("click", () => {
+          rating = parseInt(star.dataset.value);
+          updateStars();
+        });
+      });
+
+      function updateStars() {
+        stars.forEach((star) => {
+          star.classList.toggle(
+            "active",
+            parseInt(star.dataset.value) <= rating
+          );
+        });
+      }
+
+      function saveEntry() {
+        const name = document.getElementById("username").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+
+        if (!name || !comment || rating === 0) {
+          alert("Please fill in all fields and select a rating.");
+          return;
+        }
+
+        const entries = JSON.parse(localStorage.getItem("entries")) || [];
+        entries.push({ name, comment, rating });
+        localStorage.setItem("entries", JSON.stringify(entries));
+
+        if (rating === 5) {
+          window.open("https://www.google.com", "_blank");
+        }
+
+        document.getElementById("username").value = "";
+        document.getElementById("comment").value = "";
+        rating = 0;
+        updateStars();
+        displayEntries();
+        updateAverageRating();
+      }
+
+      function displayEntries() {
+        const displayBox = document.getElementById("displayBox");
+        displayBox.innerHTML = "";
+        const entries = JSON.parse(localStorage.getItem("entries")) || [];
+
+        entries.forEach((entry) => {
+          const box = document.createElement("div");
+          box.className = "entry-box";
+          box.innerHTML = `
+      <div class="entry-header">
+        <strong>${entry.name}</strong>
+        <span>${"★".repeat(entry.rating)}${"☆".repeat(5 - entry.rating)}</span>
+      </div>
+      <p>${entry.comment}</p>
+    `;
+          displayBox.appendChild(box);
+        });
+      }
+
+      function updateAverageRating() {
+        const entries = JSON.parse(localStorage.getItem("entries")) || [];
+        if (entries.length === 0) {
+          avgStars.innerText = "☆☆☆☆☆";
+          avgText.innerText = "Average Rating: 0.0 / 5";
+          avgCount.innerText = "No reviews yet.";
+          return;
+        }
+
+        const total = entries.reduce((sum, e) => sum + e.rating, 0);
+        const avg = total / entries.length;
+
+        let fullStars = Math.floor(avg);
+        let halfStar = avg % 1 >= 0.5 ? 1 : 0;
+        let emptyStars = 5 - fullStars - halfStar;
+
+        avgStars.innerHTML =
+          "★".repeat(fullStars) +
+          (halfStar ? "☆" : "") +
+          "☆".repeat(emptyStars);
+
+        avgText.innerText = `Average Rating: ${avg.toFixed(1)} / 5`;
+        avgCount.innerText = `Based on ${entries.length} review${
+          entries.length > 1 ? "s" : ""
+        }.`;
+      }
+
+      displayEntries();
+      updateAverageRating();
+    </script>
+  </body>
+</html>
