@@ -210,6 +210,12 @@ footer {
   color: #122c53;
 }
 
+/* Extra styling for Premium Enterprise Suite */
+.service-box.reverse {
+  background: #0b1b33; /* slightly darker blue tone for alternating style */
+}
+
+
 /* ✅ Sticky Call Button ---------------------------------------------------------------------------------*/
 .call-btn {
   position: fixed;
@@ -504,6 +510,23 @@ button:hover {
   color: green;
 }
 
+.service-img {
+  width: calc(100% - 1cm); /* leaves 0.5 cm space on each side */
+  margin: 0.5cm; /* space between image and card edge */
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* MOBILE FRIENDLY hamburger menu*/
+/* ===========================
+   MOBILE NAVIGATION
+   =========================== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -517,4 +540,3 @@ button:hover {
   margin: 4px 0;
   transition: 0.3s;
 }
-
