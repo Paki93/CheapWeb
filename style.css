@@ -1,4 +1,4 @@
-/* INDEX */
+
 
 /* NAVIGATION */
 nav {
@@ -59,7 +59,7 @@ nav {
 }
 
 
-/* HEADER */
+/* HEADER ---------------------------------------------------------------------------------*/
 header {
   text-align: center;
   padding: 100px 20px 60px;
@@ -90,7 +90,7 @@ header#home1 {
   text-align: center;
   overflow: hidden;
 }
-
+/* BODY  ---------------------------------------------------------------------------------*/
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -98,7 +98,8 @@ body {
   color: #ffffff;
 }
 
-/*VIDEO*/
+/* VIDEO  ---------------------------------------------------------------------------------*/
+
 .video-background {
   position: relative;
   height: 100vh;
@@ -125,34 +126,29 @@ body {
 }
 
 
-/* FOOTER */
-footer {
-  /*bottom*/
-  background: #122c53;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-
 /* SERVICES SECTION ---------------------------------------------------------------------------------*/
-#services {
-  padding: 80px 20px;
-}
 
+
+/* our service title */
 .section-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 10px;
   color: #122c53;
 }
-
+/* subtitle title */
 .section-subtitle {
   text-align: center;
   color: #122c53;
   margin-bottom: 50px;
 }
 
+/* all service box up and left space*/
+#services { 
+  padding: 80px 20px; /* up space, right left space*/
+}
+
+/* all writing box*/
 .service-box {
   display: flex;
   align-items: center;
@@ -167,142 +163,61 @@ footer {
 }
 
 
-
+/* 2nd box */
 .service-box.reverse {
   flex-direction: row-reverse;
+  background: #0b1b33; /* slightly darker blue tone for alternating style */
+
 }
+
+/* all service image*/
 
 .service-img {
-  width: 45%;
-  max-width: 500px;
-  border-radius: 10px;
+  /*width: 45%; not need*/
+  max-width: 500px; /* service all image*/
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 1cm); /* leaves 0.5 cm space on each side */
+  margin: 0.5cm; /* space between image and card edge */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0s ease, box-shadow 0s ease;
 }
 
+.service-img:hover {
+  transform: scale(1.05); /*image dimension on click*/
+  box-shadow: 0 15px 15px rgba(243, 255, 255, 255);
+}
+
+
+/* all tex next to img */
 .service-info {
   flex: 1;
 }
 
+/* all service title*/
 .service-info h3 {
   font-size: 1.6rem;
   margin-bottom: 10px;
   color: #ffffff;
 }
 
+/* all service subtitle and price */
 .service-info p {
   margin-bottom: 15px;
   line-height: 1.6;
   color: #ffffff;
 }
 
+/* all service writing box */
 .service-info ul {
   list-style: none;
   padding: 0;
   margin: 0 0 10px;
 }
 
+/* all service writing hight space */
 .service-info li {
   margin: 6px 0;
-}
-
-.price {
-  font-weight: 700;
-  color: #122c53;
-}
-
-/* Extra styling for Premium Enterprise Suite */
-.service-box.reverse {
-  background: #0b1b33; /* slightly darker blue tone for alternating style */
-}
-
-
-/* ✅ Sticky Call Button ---------------------------------------------------------------------------------*/
-.call-btn {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #28a745;
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-.call-btn:hover {
-  background: #218838;
-}
-
-/*OTHER*/
-
-/* Features */
-.features {
-  padding: 60px 0;
-  background: #f4f4f4;
-  text-align: center;
-}
-
-.features h2 {
-  margin-bottom: 40px;
-}
-
-.feature-box {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.feature-box div {
-  background: white;
-  padding: 20px;
-  width: 300px;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-/* Pricing */
-.pricing {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.pricing-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: #f4f4f4;
-  padding: 20px;
-  margin: 10px;
-  width: 250px;
-  border-radius: 10px;
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.card ul {
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-.card button {
-  background: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
 }
 
 
@@ -373,25 +288,81 @@ select:focus {
 .submit-btn:hover {
   background-color: #28a745;
 }
-
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .service-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .service-box.reverse {
-    flex-direction: column;
-  }
-
-  .service-img {
-    width: 100%;
-  }
+/* ✅ Sticky Call Button ---------------------------------------------------------------------------------*/
+.call-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #28a745;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
-/*sign up*/
+.call-btn:hover {
+  background: #218838;
+}
+/* FOOTER bottom  ---------------------------------------------------------------------------------*/
+
+footer {
+
+  background: #122c53;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* ABOUT PAGE  ---------------------------------------------------------------------------------*/
+/*
+.about-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.about-section {
+  margin-bottom: 20px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 15px;
+  padding-left: 0;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.about-section ul {
+  padding-left: 0;
+  list-style: none;
+  color: #444;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.about-section ul li::marker {
+  color: green;
+} */
+
+
+/* SIGN UP  ---------------------------------------------------------------------------------*/
+/*
 .page-content {
   flex: 1;
   display: flex;
@@ -464,66 +435,10 @@ button:hover {
   text-decoration: underline;
 }
 
-/* About Page Styling */
+*/
 
+/* MOBILE FRIENDLY hamburger menu ---------------------------------------------------------------------------------*/
 
-/* Business information */
-.about-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.about-section {
-  margin-bottom: 20px;
-}
-
-.about-section h2 {
-  font-size: 1.8rem;
-  color: #000000;
-  margin-bottom: 15px;
-  padding-left: 0;
-}
-
-.about-section p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #000000;
-  margin-bottom: 15px;
-}
-
-.about-section ul {
-  padding-left: 0;
-  list-style: none;
-  color: #444;
-}
-
-.about-section ul li {
-  margin-bottom: 10px;
-  font-size: 1.05rem;
-}
-
-.about-section ul li::marker {
-  color: green;
-}
-
-.service-img {
-  width: calc(100% - 1cm); /* leaves 0.5 cm space on each side */
-  margin: 0.5cm; /* space between image and card edge */
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-/* MOBILE FRIENDLY hamburger menu*/
 /* ===========================
    MOBILE NAVIGATION
    =========================== */
@@ -539,4 +454,78 @@ button:hover {
   background: white;
   margin: 4px 0;
   transition: 0.3s;
+}
+/* PHONE RESPONSIVE  ---------------------------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+  .service-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-box.reverse {
+    flex-direction: column;
+  }
+
+  .service-img {
+    width: 100%;
+  }
+}
+
+/* ============ MOBILE MENU FIX ============ */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0d2344;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .service-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-img {
+    width: 100%;
+  }
+
+  .video-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .video-content p {
+    font-size: 1rem;
+  }
+
+  .booking-card {
+    padding: 25px;
+  }
 }
