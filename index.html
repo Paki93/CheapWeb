@@ -6,20 +6,21 @@
     <title>CheapWeb</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
+    <!--  -->
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+    
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    </script>
+    
   <body>
     <!-- Navigation -->
     <nav>
       <div class="container nav-container">
         <h1 class="logo">CheapWeb</h1>
-
-        <!-- Hamburger Icon -->
-        <div class="menu-toggle">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="payment.html">Packages</a></li>
@@ -27,20 +28,45 @@
         </ul>
       </div>
     </nav>
-
-    <!-- Hero Video Section -->
+        </ul>
+      </div>
+    </nav>
+     
+   <!-- video -->
     <div class="video-background">
       <video autoplay loop muted playsinline id="bg-video">
-        <source src="assets/images/dna.mp4" type="video/mp4" />
+        <source src="assets/images/dna.mp4" type="video/mp4">
       </video>
 
+<!--
+  <div class="small-video-container">
+    <video autoplay loop muted playsinline id="small-video">
+      <source src="bubbles.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+
+    <div class="small-video-container top-left">
+      <video autoplay loop muted playsinline id="small-videoleft">
+        <source src="dna.mp4" type="video/mp4" />
+      </video>
+    </div>
+  -->
+
+ <!-- video container -->
       <div class="video-content">
         <h1>Welcome to CheapWeb</h1>
         <p>Professional Websites at Affordable Prices</p>
       </div>
     </div>
 
-    <!-- Services Section -->
+    <nav>
+      <div class="container nav-container">
+        <h1 class="logo"></h1>
+      </div>
+    </nav>
+
+    <!-- Service Categories Section -->
     <section id="services">
       <div class="container">
         <h2 class="section-title">Our Services</h2>
@@ -51,128 +77,193 @@
         <!-- Standard -->
         <div class="service-box">
           <a href="payment.html">
-            <img
-              src="assets/images/business.avif"
-              alt="Standard Website"
-              class="service-img"
-            />
-          </a>
+          <img
+            src="assets/images/business.avif"
+            alt="Standard Website Example"
+            class="service-img"
+          /> 
+        </a>
           <div class="service-info">
             <h3>STANDARD</h3>
             <p>
-              Perfect for small businesses with low budget — clean, responsive,
-              and effective.
+              Perfect for small businesses with low budget. A clean,
+              responsive website that covers all essentials — simple, fast, and
+              effective.
             </p>
             <ul>
               <li>✔ Basic 1 page design</li>
               <li>✔ Mobile-friendly design</li>
-              <li>✔ Free technical consultation</li>
+              <li>✔ Free technical consultaion</li>
               <li>✔ Fast delivery in 2/3 days</li>
             </ul>
-            <p class="price">£29/month</p>
+            <p class="price">£29 month.</p>
           </div>
         </div>
 
-        <!-- Advanced -->
+        <!-- Personalised -->
         <div class="service-box reverse">
           <a href="payment.html">
-            <img
-              src="assets/images/customised.jpeg"
-              alt="Advanced Website"
-              class="service-img"
-            />
-          </a>
+          <img
+            src="assets/images/customised.jpeg"
+            alt="Personalised Website Example"
+            class="service-img"
+          />
+        </a>
           <div class="service-info">
             <h3>ADVANCED</h3>
             <p>
-              For growing businesses that need up to 3 pages, premium visuals,
-              and tailored functionality.
+              Perfect for a started business who need to show extra services and need more pages.
+              Includes up to 3 pages, premium visuals. Get a fully customised website designed around your brand and
+              goals
             </p>
             <ul>
               <li>✔ Up to 3 pages</li>
               <li>✔ Mobile-friendly design</li>
-              <li>✔ Free consultation</li>
-              <li>✔ Custom design option</li>
+              <li>✔ Free technical consultaion</li>
+              <li>✔ Call directly</li>
+              <li>✔ Option for custom design</li>
               <li>✔ 1 week delivery</li>
             </ul>
-            <p class="price">£49/month</p>
+            <p class="price">£49 month.</p>
           </div>
         </div>
 
-        <!-- High Level -->
+        <!-- High-Level Software -->
         <div class="service-box">
-          <a href="payment.html">
-            <img
-              src="assets/images/software2.jpeg"
-              alt="High-Level Software"
-              class="service-img"
-            />
-          </a>
+          <a href="payment.html"> 
+          <img
+            src="assets/images/software2.jpeg"
+            alt="High-Level Software Example"
+            class="service-img"
+          />
+        </a>
           <div class="service-info">
             <h3>HIGH LEVEL</h3>
             <p>
-              Ideal for startups or running businesses — scalable, secure, and
-              professional.
+              Ideal for startups or running businesses to improove customers — scalable and secure.
             </p>
             <ul>
               <li>✔ Up to 5 pages</li>
-              <li>✔ Free consultation</li>
-              <li>✔ Software integration</li>
-              <li>✔ 1–2 weeks delivery</li>
+              <li>✔ Mobile-friendly design</li>
+              <li>✔ Free technical consultaion</li>
+              <li>✔ Call directly</li>
+              <li>✔ Option for custom design</li>
+              <li>✔ 1-2 weeks delivery</li>
+              <li>✔ Software integration for your need</li>
+              <ul style="padding-left: 20px;">
+                <ul style="list-style-type: disc;">
+                <li>Contact form or</li>
+                <li>Payment or</li>
+                <li>Feedback and 5 star rating</li>
+              </ul>
             </ul>
-            <p class="price">£99/month</p>
+            </ul>
+            <p class="price">£99 month.</p>
           </div>
+      </div>
+   
+
+ <!-- High-Level Software all in 1 -->
+ <div class="service-box reverse">
+  <a href="payment.html"> 
+  <img
+    src="assets/images/software2.jpeg"
+    alt="High-Level Software Example"
+    class="service-img"
+  />
+</a>
+  <div class="service-info">
+    <h3>HIGH LEVEL PRO</h3>
+    <p>
+      Ideal for startups or running businesses to improove customers — scalable and secure.
+    </p>
+    <ul>
+      <li>✔ Up to 5 pages</li>
+      <li>✔ Mobile-friendly design</li>
+      <li>✔ Free technical consultaion</li>
+      <li>✔ Call directly</li>
+      <li>✔ Option for custom design</li>
+      <li>✔ 2-3 weeks delivery</li>
+      <li>✔ Software integration for your need</li>
+      <ul style="padding-left: 20px;">
+        <ul style="list-style-type: disc;">
+        <li>Contact form </li>
+        <li>Payment</li>
+        <li>Feedback and 5 star rating</li>
+      </ul>
+    </ul>
+    </ul>
+    <p class="price">£149 per month.</p>
+  </div>
+</div>
+</div>
+</section>
+
+       <!-- Booking Form -->
+       <section class="booking-section">
+        <div class="booking-card">
+          <h1>Still have question?</h1>
+          <h2>Book Your Free Consultation</h2>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="website-type">Website Type</label>
+              <select id="website-type" name="website-type" required>
+                <option value="">Select a website type</option>
+                <option value="standard">Standard</option>
+                <option value="personalised">Personalised</option>
+                <option value="high-level">High-Level Software</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+  
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <input type="time" id="time" name="time" required />
+            </div>
+  
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Booking Form -->
-    <section class="booking-section">
-      <div class="booking-card">
-        <h1>Still have questions?</h1>
-        <h2>Book Your Free Consultation</h2>
-        <form>
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="website-type">Website Type</label>
-            <select id="website-type" required>
-              <option value="">Select type</option>
-              <option value="standard">Standard</option>
-              <option value="advanced">Advanced</option>
-              <option value="high-level">High Level</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" required />
-          </div>
-
-          <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <input type="time" id="time" required />
-          </div>
-
-          <button type="submit" class="submit-btn">Submit</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Call Button -->
+    <!-- Sticky Call Button -->
     <a href="tel:+447540296005" class="call-btn">📞 Call Now</a>
 
     <!-- Footer -->
@@ -180,14 +271,6 @@
       <p>&copy; 2025 CheapWeb. All rights reserved.</p>
     </footer>
 
-    <!-- ✅ Script (moved to bottom) -->
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
