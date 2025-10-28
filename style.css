@@ -1,531 +1,387 @@
-
-
-/* NAVIGATION */
+/* ===========================
+   NAVIGATION STYLES
+   =========================== */
 nav {
-  background: #0d2344;
-  color: #fff;
-  padding: 15px 0;
+    background: #0d2344; /* Dark blue background for the navigation bar */
+    color: #fff; /* Default text color is white */
+    padding: 15px 0; /* Vertical padding: 15px top and bottom, 0 left and right */
 }
-
+  
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+    width: 90%; /* Container takes up 90% of the parent width */
+    max-width: 1100px; /* Maximum width of container is 1100px */
+    margin: 0 auto; /* Center container horizontally */
 }
-
+  
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex; /* Use Flexbox to arrange child elements */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Vertically align items in the center */
 }
-
+  
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
+    font-weight: 700; /* Bold text for logo */
+    font-size: 1.5rem; /* Font size of 1.5 rem */
 }
-
+  
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
+    display: flex; /* Display links horizontally */
+    list-style: none; /* Remove bullet points from list */
+    gap: 25px; /* Space of 25px between each link */
 }
-
-/* nav writng color*/
+  
+/* Link default color */
 .nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
+    color: #ffffff; /* White text for navigation links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Medium font weight */
 }
-
-/* nav writng background color*/
+  
+/* Link hover color */
 .nav-links a:hover {
-  color: #2599dd
+    color: #2599dd; /* Light blue color when hovered */
 }
-
-/*nav active*/
+  
+/* Active link styling */
 .nav-links a.active {
-  background: #28a745;
-  /* light blue highlight */
-  color: white;
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-weight: bold;
-  transition: background 0.3s ease;
+    background: #28a745; /* Green background for active link */
+    color: white; /* Text color white */
+    padding: 8px 16px; /* Add padding inside active link */
+    border-radius: 50px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background 0.3s ease; /* Smooth transition when background changes */
 }
-
+  
 .nav-links a.active:hover {
-  background: #218838;
-  /* dark blue hover */
+    background: #218838; /* Darker green on hover */
 }
 
-
-/* HEADER ---------------------------------------------------------------------------------*/
+/* ===========================
+   HEADER STYLES
+   =========================== */
 header {
-  text-align: center;
-  padding: 100px 20px 60px;
-  background: #122c53;
-  color: #fff;
+    text-align: center; /* Center all text inside header */
+    padding: 100px 20px 60px; /* Top:100px, Left/Right:20px, Bottom:60px */
+    background: #122c53; /* Dark blue background */
+    color: #fff; /* Text color white */
 }
-
+  
 header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+    font-size: 2.5rem; /* Main header font size */
+    margin-bottom: 10px; /* Space below header */
 }
-
-/* header index */
+  
+/* Specific header section with background image */
 header#home1 {
-  background-image: url("group.avif");
-  /* Your image file */
-  background-size: cover;
-  /* Make it fill the space */
-  background-position: center;
-  /* Center nicely */
-  height: 80vh;
-  /* Adjust height (80% of viewport) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
+    background-image: url("group.avif"); /* Hero background image */
+    background-size: cover; /* Cover entire header area */
+    background-position: center; /* Center image */
+    height: 80vh; /* 80% of viewport height */
+    display: flex; /* Flex container for content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    color: white; /* White text */
+    position: relative; /* For positioning child elements */
+    text-align: center; /* Center text */
+    overflow: hidden; /* Hide overflowing content */
 }
-/* BODY  ---------------------------------------------------------------------------------*/
+
+/* ===========================
+   BODY STYLES
+   =========================== */
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: WHITE;
-  color: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Default font */
+    margin: 0; /* Remove default margin */
+    background: white; /* Page background white */
+    color: #ffffff; /* Default text color white */
 }
 
-/* VIDEO  ---------------------------------------------------------------------------------*/
-
+/* ===========================
+   VIDEO BACKGROUND STYLES
+   =========================== */
 .video-background {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+    position: relative; /* Allows absolute positioning inside */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflowing video */
 }
 
 #bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+    position: absolute; /* Absolute positioning for video */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Video covers entire container */
+    transform: translate(-50%, -50%); /* Center using transform */
+    z-index: -1; /* Place behind other elements */
 }
 
 .video-content {
-  position: relative;
-  color: white;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
+    position: relative; /* Position relative to parent */
+    color: white; /* Text color white */
+    text-align: center; /* Center text */
+    top: 50%; /* Start from middle of container */
+    transform: translateY(-50%); /* Vertical centering */
+    padding: 0 20px; /* Horizontal padding */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2.5s ease forwards; /* Fade in animation */
 }
 
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Invisible at start */
+        transform: translateY(-20px); /* Slightly above */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(-50%); /* Centered */
+    }
+}
 
-/* SERVICES SECTION ---------------------------------------------------------------------------------*/
+.video-content h1 {
+    font-size: 2.5rem; /* Large heading */
+    margin-bottom: 10px; /* Space below heading */
+    animation: fadeIn 3s ease forwards; /* Fade in effect */
+}
 
+.video-content p {
+    font-size: 1.2rem; /* Paragraph font size */
+    animation: fadeIn 4s ease forwards; /* Fade in after heading */
+}
 
-/* our service title */
+/* ===========================
+   SERVICES SECTION
+   =========================== */
 .section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #122c53;
+    text-align: center; /* Center title text */
+    font-size: 2rem; /* Font size */
+    margin-bottom: 10px; /* Space below title */
+    color: #122c53; /* Dark blue text */
 }
-/* subtitle title */
+
 .section-subtitle {
-  text-align: center;
-  color: #122c53;
-  margin-bottom: 50px;
+    text-align: center; /* Center subtitle */
+    color: #122c53; /* Dark blue text */
+    margin-bottom: 50px; /* Space below subtitle */
 }
 
-/* all service box up and left space*/
-#services { 
-  padding: 80px 20px; /* up space, right left space*/
+#services {
+    padding: 80px 20px; /* Padding around services section */
 }
 
-/* all writing box*/
 .service-box {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 70px;
-  flex-wrap: wrap;
-  background: #122c53;
-  color: WHITE;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 40px; /* Gap between image and text */
+    margin-bottom: 70px; /* Space between service boxes */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    background: #122c53; /* Dark blue background */
+    color: white; /* Text color white */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px; /* Padding inside box */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-
-/* 2nd box */
 .service-box.reverse {
-  flex-direction: row-reverse;
-  background: #0b1b33; /* slightly darker blue tone for alternating style */
-
+    flex-direction: row-reverse; /* Swap order of image and text */
+    background: #0b1b33; /* Darker blue background */
 }
-
-/* all service image*/
 
 .service-img {
-  /*width: 45%; not need*/
-  max-width: 500px; /* service all image*/
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 1cm); /* leaves 0.5 cm space on each side */
-  margin: 0.5cm; /* space between image and card edge */
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0s ease, box-shadow 0s ease;
+    max-width: 500px; /* Maximum width */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: calc(100% - 1cm); /* Width minus margin */
+    margin: 0.5cm; /* Margin around image */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: transform 0s ease, box-shadow 0s ease; /* Smooth hover */
 }
 
 .service-img:hover {
-  transform: scale(1.05); /*image dimension on click*/
-  box-shadow: 0 15px 15px rgba(243, 255, 255, 255);
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 15px 15px rgba(243, 255, 255, 1); /* Brighter shadow */
 }
 
-
-/* all tex next to img */
 .service-info {
-  flex: 1;
+    flex: 1; /* Take remaining space */
 }
 
-/* all service title*/
 .service-info h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: #ffffff;
+    font-size: 1.6rem; /* Heading size */
+    margin-bottom: 10px; /* Space below heading */
+    color: #ffffff; /* White text */
 }
 
-/* all service subtitle and price */
 .service-info p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-  color: #ffffff;
+    margin-bottom: 15px; /* Space below paragraph */
+    line-height: 1.6; /* Line spacing */
+    color: #ffffff; /* White text */
 }
 
-/* all service writing box */
 .service-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 10px;
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0 0 10px; /* Bottom margin */
 }
 
-/* all service writing hight space */
 .service-info li {
-  margin: 6px 0;
+    margin: 6px 0; /* Space between list items */
 }
 
-
-/* Booking Section  ---------------------------------------------------------------------------------*/
-
+/* ===========================
+   BOOKING SECTION
+   =========================== */
 .booking-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-  padding: 40px 0;
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 90vh; /* Minimum height 90% viewport */
+    padding: 40px 0; /* Vertical padding */
 }
 
 .booking-card {
-  background: white;
-  color: #122c53;
-  padding: 40px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background: white; /* White background */
+    color: #122c53; /* Dark blue text */
+    padding: 40px; /* Padding inside card */
+    border-radius: 16px; /* Rounded corners */
+    width: 90%; /* Width of card */
+    max-width: 500px; /* Maximum width */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Shadow effect */
 }
 
 .booking-card h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #122c53;
+    text-align: center; /* Center heading */
+    margin-bottom: 25px; /* Space below heading */
+    color: #122c53; /* Heading color */
 }
 
 .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between form groups */
 }
 
 label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
+    display: block; /* Label occupies full width */
+    margin-bottom: 6px; /* Space below label */
+    font-weight: 600; /* Semi-bold text */
 }
 
 input,
 select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding inside input */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 15px; /* Text size */
 }
 
 input:focus,
 select:focus {
-  outline: none;
-  border-color: #122c53;
-  ;
+    outline: none; /* Remove default focus outline */
+    border-color: #122c53; /* Highlight border on focus */
 }
 
 .submit-btn {
-  width: 100%;
-  background-color: #122c53;
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.1s ease;
+    width: 100%; /* Full width button */
+    background-color: #122c53; /* Dark blue background */
+    color: white; /* White text */
+    padding: 14px; /* Padding inside button */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.1s ease; /* Smooth background change */
 }
 
 .submit-btn:hover {
-  background-color: #28a745;
+    background-color: #28a745; /* Green on hover */
 }
-/* ✅ Sticky Call Button ---------------------------------------------------------------------------------*/
+
+/* ===========================
+   STICKY CALL BUTTON
+   =========================== */
 .call-btn {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #28a745;
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+    position: fixed; /* Fixed position */
+    bottom: 15px; /* 15px from bottom */
+    right: 15px; /* 15px from right */
+    background: #28a745; /* Green background */
+    color: #fff; /* White text */
+    padding: 1rem 1.5rem; /* Padding */
+    border-radius: 50px; /* Rounded pill shape */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+    z-index: 1000; /* Keep above other elements */
 }
 
 .call-btn:hover {
-  background: #218838;
+    background: #218838; /* Darker green on hover */
 }
-/* FOOTER bottom  ---------------------------------------------------------------------------------*/
-
-footer {
-
-  background: #122c53;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-/* ABOUT PAGE  ---------------------------------------------------------------------------------*/
-/*
-.about-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.about-section {
-  margin-bottom: 20px;
-}
-
-.about-section h2 {
-  font-size: 1.8rem;
-  color: #000000;
-  margin-bottom: 15px;
-  padding-left: 0;
-}
-
-.about-section p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #000000;
-  margin-bottom: 15px;
-}
-
-.about-section ul {
-  padding-left: 0;
-  list-style: none;
-  color: #444;
-}
-
-.about-section ul li {
-  margin-bottom: 10px;
-  font-size: 1.05rem;
-}
-
-.about-section ul li::marker {
-  color: green;
-} */
-
-
-/* SIGN UP  ---------------------------------------------------------------------------------*/
-/*
-.page-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.signup-container {
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  width: 350px;
-  text-align: center;
-}
-
-.signup-container h1 {
-  margin-bottom: 10px;
-  color: #122c53;
-  ;
-}
-
-.signup-container p {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-button {
-  width: 25%;
-  background: #122c53;
-  ;
-  color: #fff;
-  margin-left: 20px;
-  margin-top: 5px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.1s;
-}
-
-button:hover {
-  background: #28a745;
-}
-
-.login-link {
-  margin-top: 15px;
-  display: block;
-  font-size: 0.9rem;
-}
-
-.login-link a {
-  color: #122c53;
-  text-decoration: none;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-}
-
-*/
-
-/* MOBILE FRIENDLY hamburger menu ---------------------------------------------------------------------------------*/
 
 /* ===========================
-   MOBILE NAVIGATION
+   FOOTER
    =========================== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+footer {
+    background: #122c53; /* Dark blue background */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 60px 20px; /* Padding inside footer */
 }
 
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-/* PHONE RESPONSIVE  ---------------------------------------------------------------------------------*/
-
+/* ===========================
+   MOBILE RESPONSIVE STYLES
+   =========================== */
 @media (max-width: 768px) {
-  .service-box {
-    flex-direction: column;
-    text-align: center;
-  }
+    /* Container smaller on tablets */
+    .container { width: 95%; }
 
-  .service-box.reverse {
-    flex-direction: column;
-  }
+    /* Stack nav items vertically */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
 
-  .service-img {
-    width: 100%;
-  }
+    .logo { font-size: 1.3rem; }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a { font-size: 0.95rem; padding: 6px 10px; }
+
+    nav { position: relative; z-index: 999; }
+
+    .video-background { height: 80vh; }
+
+    .video-content { top: 45%; transform: translateY(-50%); padding: 0 15px; }
+
+    .video-content h1 { font-size: 1.8rem; }
+
+    .video-content p { font-size: 1rem; }
+
+    .service-box, .service-box.reverse { flex-direction: column; text-align: center; }
+
+    .service-img { max-width: 100%; margin: 0 auto 20px; }
+
+    .booking-card { width: 95%; padding: 25px; }
+
+    footer { padding: 40px 15px; font-size: 0.9rem; }
+
+    .call-btn { padding: 0.8rem 1.2rem; font-size: 0.9rem; }
 }
 
-/* ============ MOBILE MENU FIX ============ */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #0d2344;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .service-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .service-img {
-    width: 100%;
-  }
-
-  .video-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .video-content p {
-    font-size: 1rem;
-  }
-
-  .booking-card {
-    padding: 25px;
-  }
+@media (max-width: 480px) {
+    .nav-links a { font-size: 0.9rem; padding: 5px 8px; }
+    .logo { font-size: 1.2rem; }
+    .video-content h1 { font-size: 1.5rem; }
+    .service-info h3 { font-size: 1.3rem; }
+    .service-info p { font-size: 0.95rem; }
+    .video-background { height: 70vh; }
+    .video-content { top: 50%; transform: translateY(-50%); }
 }
