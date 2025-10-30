@@ -9,6 +9,7 @@ nav {
     /* Default text color is white */
     padding: 15px 0;
     /* Vertical padding: 15px top and bottom, 0 left and right */
+
 }
 
 .nav-container {
@@ -484,6 +485,25 @@ select:focus {
     /* Darker green on hover */
 }
 
+/* STANDARD PAGE */
+
+/* standard page pay button  ---------------------------------------------------------------------------------*/
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.1 s;
+  }
+  .cta-btn:hover {
+    background: #218838;
+  }
+  
+
 /* FOOTER bottom  ---------------------------------------------------------------------------------*/
 /* ===========================
    FOOTER
@@ -498,6 +518,8 @@ footer {
     padding: 60px 20px;
     /* Padding inside footer */
 }
+
+
 
 /* ABOUT PAGE  ---------------------------------------------------------------------------------*/
 /*
