@@ -11,39 +11,36 @@
 <body>
 
   <!-- NAVIGATION -->
-  <header>
-    <nav class="navbar" aria-label="Main navigation">
+  <nav>
+    <div class="container nav-container">
       <div class="container nav-container">
-        <h1 class="logo"><a href="index.html" aria-label="CheapWeb home">CheapWeb</a></h1>
-        <ul class="nav-links" role="menubar" aria-label="Primary">
-          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-          <li role="none"><a role="menuitem" href="payment.html">Packages</a></li>
-          <li role="none"><a role="menuitem" href="feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+        <h1 class="logo">
+          <a href="index.html">CheapWeb</a>
+        </h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="standard.html" class="active">Standard Package</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- HERO / HEADER -->
   <main>
     <section class="hero-section" aria-label="Standard package hero">
       <div class="video-background" style="min-height:320px;">
         <!-- optional background image as a fallback for devices without video -->
-        <picture>
+      <picture>
           <source srcset="assets/images/business.avif" type="image/avif" />
           <img src="assets/images/business.avif" alt="" aria-hidden="true" style="display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;" />
-        </picture>
+        </picture> 
 
         <div class="video-overlay" style="background: linear-gradient(180deg, rgba(13,35,68,0.6), rgba(13,35,68,0.75));"></div>
 
         <div class="video-content container" style="padding:80px 0;">
           <h1>Standard Package</h1>
-          <p style="max-width:900px;margin:14px auto 0;font-size:1.1rem;">
-            Perfect for small businesses on a budget — simple, fast, and effective. Get a polished single-page website that looks great on every device and helps you convert visitors into customers.
-          </p>
+         
           <div style="margin-top:18px;">
-            <a href="payment.html" class="cta-btn" aria-label="Choose Standard Package">Choose this package — £29 / month</a>
-            <a href="#contact-booking" class="cta-btn" style="background:#28a745;margin-left:12px;" aria-label="Book free consultation">Book free consultation</a>
+            <a href="payment.html" class="cta-btn" aria-label="Choose Standard Package">Subscribe now</a>
           </div>
         </div>
       </div>
@@ -52,14 +49,15 @@
     <!-- SUMMARY / KEY POINTS -->
     <section class="section" aria-labelledby="what-includes">
       <div class="container">
+        <h2 id="what-includes" class="section-title">Standard package</h2>
+        <p class="section-subtitle">Perfect for small businesses on a budget — simple, fast, and effective. Get a polished single-page website that looks great on every device and helps you convert visitors into customers.</p>
         <h2 id="what-includes" class="section-title">What's Included</h2>
-        <p class="section-subtitle">Everything you need to launch a professional, mobile-ready online presence quickly.</p>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:34px;">
           <!-- Card: Design -->
           <article class="service-box" style="padding:20px;border-radius:12px;">
-            <div class="service-info" style="width:100%;padding:18px;">
-              <h3>✔ 1-Page Responsive Design</h3>
+            <div class="service-info" style="width:100%;padding:18px;color:black;">
+              <h4>✅ 1-Page Responsive Design</h4>
               <p>
                 A single-page layout optimized for clarity and conversion. We structure your page with a strong hero (headline + CTA), an About / Why section, Services, Testimonials (optional), and a Contact area.
               </p>
@@ -67,9 +65,9 @@
           </article>
 
           <!-- Card: Mobile -->
-          <article class="service-box" style="padding:20px;border-radius:12px;">
+          <article class="service-box" style="padding:20px;border-radius:12px;color:black;">
             <div class="service-info">
-              <h3>✔ Mobile-Friendly Design</h3>
+              <h4>✅ Mobile-Friendly Design</h4>
               <p>
                 We design with a mobile-first mindset so your site looks and works flawlessly across phones and tablets.
               </p>
@@ -78,9 +76,9 @@
           </article>
 
           <!-- Card: Consultation -->
-          <article class="service-box" style="padding:20px;border-radius:12px;">
+          <article class="service-box" style="padding:20px;border-radius:12px;color:black;">
             <div class="service-info">
-              <h3>✔ Free Technical Consultation</h3>
+              <h4>✅ Free Technical Consultation</h4>
               <p>
                 A short planning call (phone or video) so we understand your goals, branding, and content. We walk you through options and recommend the simplest, most effective setup.
               </p>
@@ -89,9 +87,9 @@
           </article>
 
           <!-- Card: Delivery -->
-          <article class="service-box" style="padding:20px;border-radius:12px;">
+          <article class="service-box" style="padding:20px;border-radius:12px;color:black;">
             <div class="service-info">
-              <h3>✔ Fast Delivery (2–3 Business Days)</h3>
+              <h4>✅ Fast Delivery (2–3 Business Days)</h4>
               <p>
                 Once you provide your content (logo, text, and images) we build, test, and deliver a production-ready site in 2–3 business days.
               </p>
@@ -109,13 +107,12 @@
       
         <div style="display:inline-block;background:#fff;padding:28px 36px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.06);margin-top:18px;">
           <p style="font-size:1.2rem;margin-bottom:8px;color:#0d2344;font-weight:600;">Standard Package</p>
-          <p style="font-size:1.6rem;color:#00b4d8;font-weight:700;margin:0 0 16px;">£29 / month</p>
+          <p style="font-size:1.6rem;color:#0d2344;font-weight:700;margin:0 0 16px;">£29 / month</p>
           <p style="color:#555;max-width:720px;margin:0 auto 18px;">
-         Cancel anytime.
+         Cancel anytime - no hidden cost.
           </p>
           <div style="display:flex;gap:12px;justify-content:center;">
-            <a href="payment.html" class="cta-btn" aria-label="Purchase Standard Package">Get Started — £29 / month</a>
-            <a href="#contact-booking" class="cta-btn" style="background:#28a745;" aria-label="Book consultation for Standard Package">Book free consultation</a>
+            <a  href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01" class="cta-btn" aria-label="Purchase Standard Package">Subscribe Now</a>
           </div>
         </div>
       </div>
