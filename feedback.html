@@ -6,14 +6,17 @@
     <title>Booking | CheapWeb</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Navigation -->
     <nav>
       <div class="container nav-container">
-        <h1 class="logo">CheapWeb</h1>
+        <h1 class="logo">
+          <a href="index.html">CheapWeb</a>
+        </h1>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="payment.html">Purchase</a></li>
+          <li><a href="payment.html">Packages</a></li>
           <li><a href="feedback.html" class="active">Feedback</a></li>
         </ul>
       </div>
@@ -32,11 +35,6 @@
         color: #fff;
         text-align: center;
         padding: 20px;
-      }
-
-      header h1 {
-        margin: 0;
-        font-size: 2rem;
       }
 
       main {
@@ -61,6 +59,7 @@
         padding: 10px;
         margin-bottom: 12px;
         font-size: 1rem;
+        font-family: inherit;
       }
 
       textarea {
@@ -68,7 +67,6 @@
         resize: vertical;
       }
 
-      /* Stars for rating */
       .stars {
         display: flex;
         gap: 8px;
@@ -138,7 +136,6 @@
       .entry-header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         margin-bottom: 8px;
       }
 
@@ -151,28 +148,12 @@
         font-size: 1rem;
       }
 
-      .entry-box p {
-        margin: 0;
-        color: #444;
-        font-size: 0.95rem;
-      }
-      
-      textarea {
-  min-height: 70px;
-  resize: vertical;
-  font-family: inherit; /* 👈 Add this line */
-}
-
-
       @media (max-width: 600px) {
         .star {
           font-size: 1.8rem;
         }
       }
     </style>
-  </head>
-  <body>
-
 
     <main>
       <div class="average-rating">
@@ -185,6 +166,7 @@
         <h2>Leave a Review</h2>
         <input type="text" id="username" placeholder="Your Name" />
         <textarea id="comment" placeholder="Write your comment..."></textarea>
+
         <div class="stars" id="stars">
           <span class="star" data-value="1">★</span>
           <span class="star" data-value="2">★</span>
@@ -192,43 +174,41 @@
           <span class="star" data-value="4">★</span>
           <span class="star" data-value="5">★</span>
         </div>
+
         <button class="save-btn" onclick="saveEntry()">Submit Review</button>
       </div>
 
       <div id="displayBox"></div>
     </main>
-    <!-- Sticky Call Button -->
-    <a href="tel:+447540296005" class="call-btn">📞 Call Now</a>
 
-    <!-- Footer -->
     <footer>
       <p>&copy; 2025 CheapWeb. All rights reserved.</p>
     </footer>
 
     <script>
+      // 🔗 Your Google App Script URL
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxijUIlBAnNNBTxFqu0tbe4FXHjaoM8nGFp-QcjCMAn3rUb8LCv-ZT0vGDpEI0GkE8Zeg/exec";
+
       let rating = 0;
       const stars = document.querySelectorAll(".star");
-      const avgStars = document.getElementById("avgStars");
-      const avgText = document.getElementById("avgText");
-      const avgCount = document.getElementById("avgCount");
 
-      stars.forEach((star) => {
-        star.addEventListener("click", () => {
-          rating = parseInt(star.dataset.value);
+      // ⭐ Star rating selection
+      stars.forEach((s) => {
+        s.addEventListener("click", () => {
+          rating = Number(s.dataset.value);
           updateStars();
         });
       });
 
       function updateStars() {
-        stars.forEach((star) => {
-          star.classList.toggle(
-            "active",
-            parseInt(star.dataset.value) <= rating
-          );
+        stars.forEach((s) => {
+          s.classList.toggle("active", Number(s.dataset.value) <= rating);
         });
       }
 
-      function saveEntry() {
+      // ⭐ SAVE review to Google Sheets
+      async function saveEntry() {
         const name = document.getElementById("username").value.trim();
         const comment = document.getElementById("comment").value.trim();
 
@@ -237,70 +217,76 @@
           return;
         }
 
-        const entries = JSON.parse(localStorage.getItem("entries")) || [];
-        entries.push({ name, comment, rating });
-        localStorage.setItem("entries", JSON.stringify(entries));
+        const payload = { username: name, comment: comment, rating: rating };
 
-        if (rating === 5) {
-          window.open("https://www.google.com", "_blank");
-        }
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(payload),
+        });
+
+        alert("Thanks for your feedback!");
 
         document.getElementById("username").value = "";
         document.getElementById("comment").value = "";
         rating = 0;
         updateStars();
-        displayEntries();
-        updateAverageRating();
+
+        fetchReviews();
       }
 
-      function displayEntries() {
+      // ⭐ LOAD reviews from Google Sheets
+      async function fetchReviews() {
         const displayBox = document.getElementById("displayBox");
-        displayBox.innerHTML = "";
-        const entries = JSON.parse(localStorage.getItem("entries")) || [];
+        displayBox.innerHTML = "<p>Loading reviews...</p>";
 
-        entries.forEach((entry) => {
-          const box = document.createElement("div");
-          box.className = "entry-box";
-          box.innerHTML = `
-      <div class="entry-header">
-        <strong>${entry.name}</strong>
-        <span>${"★".repeat(entry.rating)}${"☆".repeat(5 - entry.rating)}</span>
-      </div>
-      <p>${entry.comment}</p>
-    `;
-          displayBox.appendChild(box);
-        });
-      }
+        try {
+          const res = await fetch(SCRIPT_URL);
+          const reviews = await res.json();
 
-      function updateAverageRating() {
-        const entries = JSON.parse(localStorage.getItem("entries")) || [];
-        if (entries.length === 0) {
-          avgStars.innerText = "☆☆☆☆☆";
-          avgText.innerText = "Average Rating: 0.0 / 5";
-          avgCount.innerText = "No reviews yet.";
-          return;
+          if (!reviews.length) {
+            displayBox.innerHTML = "<p>No reviews yet.</p>";
+            return;
+          }
+
+          let totalRating = 0;
+          displayBox.innerHTML = "";
+
+          reviews.forEach((r) => {
+            totalRating += r.rating;
+
+            displayBox.innerHTML += `
+              <div class="entry-box">
+                <div class="entry-header">
+                  <strong>${r.username}</strong>
+                  <span>${"★".repeat(r.rating)}${"☆".repeat(
+              5 - r.rating
+            )}</span>
+                </div>
+                <p>${r.comment}</p>
+              </div>
+            `;
+          });
+
+          const avg = totalRating / reviews.length;
+
+          document.getElementById("avgStars").innerText =
+            "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
+
+          document.getElementById(
+            "avgText"
+          ).innerText = `Average Rating: ${avg.toFixed(1)} / 5`;
+
+          document.getElementById("avgCount").innerText = `Based on ${
+            reviews.length
+          } review${reviews.length > 1 ? "s" : ""}.`;
+        } catch (e) {
+          displayBox.innerHTML = "<p>Error loading reviews.</p>";
         }
-
-        const total = entries.reduce((sum, e) => sum + e.rating, 0);
-        const avg = total / entries.length;
-
-        let fullStars = Math.floor(avg);
-        let halfStar = avg % 1 >= 0.5 ? 1 : 0;
-        let emptyStars = 5 - fullStars - halfStar;
-
-        avgStars.innerHTML =
-          "★".repeat(fullStars) +
-          (halfStar ? "☆" : "") +
-          "☆".repeat(emptyStars);
-
-        avgText.innerText = `Average Rating: ${avg.toFixed(1)} / 5`;
-        avgCount.innerText = `Based on ${entries.length} review${
-          entries.length > 1 ? "s" : ""
-        }.`;
       }
 
-      displayEntries();
-      updateAverageRating();
+      // Auto-run on page load
+      fetchReviews();
     </script>
   </body>
 </html>
