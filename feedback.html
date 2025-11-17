@@ -5,22 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking | CheapWeb</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="container nav-container">
-        <h1 class="logo">
-          <a href="index.html">CheapWeb</a>
-        </h1>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="payment.html">Packages</a></li>
-          <li><a href="feedback.html" class="active">Feedback</a></li>
-        </ul>
-      </div>
-    </nav>
 
     <style>
       body {
@@ -30,11 +14,9 @@
         color: #202124;
       }
 
-      header {
+      nav {
         background: #122c53;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
+        border-bottom: 1px solid #ddd;
       }
 
       main {
@@ -49,6 +31,12 @@
         border-radius: 16px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         margin-bottom: 35px;
+      }
+
+      label {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 6px;
       }
 
       input,
@@ -73,18 +61,15 @@
         margin-bottom: 20px;
         justify-content: center;
       }
-
       .star {
         font-size: 2rem;
         color: #ccc;
         cursor: pointer;
         transition: transform 0.2s;
       }
-
       .star:hover {
         transform: scale(1.2);
       }
-
       .star.active {
         color: gold;
       }
@@ -100,7 +85,6 @@
         cursor: pointer;
         font-weight: 500;
       }
-
       .save-btn:hover {
         background: #1f4588;
       }
@@ -113,7 +97,6 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
-
       .average-stars {
         font-size: 1.6rem;
         color: gold;
@@ -125,24 +108,20 @@
         flex-direction: column;
         gap: 20px;
       }
-
       .entry-box {
         background: white;
         border-radius: 12px;
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         padding: 15px;
       }
-
       .entry-header {
         display: flex;
         justify-content: space-between;
         margin-bottom: 8px;
       }
-
       .entry-header strong {
         font-size: 1rem;
       }
-
       .entry-header span {
         color: gold;
         font-size: 1rem;
@@ -153,7 +132,63 @@
           font-size: 1.8rem;
         }
       }
+
+      /* Thank You Popup */
+      .thankyou-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .thankyou-box {
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 16px;
+        text-align: center;
+        max-width: 350px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+      .thankyou-box h2 {
+        margin: 0 0 10px;
+        color: #122c53;
+        font-size: 1.6rem;
+      }
+      .thankyou-box p {
+        margin: 0 0 20px;
+        color: #444;
+      }
+      .thankyou-btn {
+        background: #122c53;
+        color: #fff;
+        padding: 10px 22px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .thankyou-btn:hover {
+        background: #1e3e72;
+      }
     </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="container nav-container">
+        <h1 class="logo"><a href="index.html">CheapWeb</a></h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="payment.html">Packages</a></li>
+          <li><a href="feedback.html" class="active">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
       <div class="average-rating">
@@ -163,8 +198,15 @@
       </div>
 
       <div class="review-form">
-        <h2>Leave a Review</h2>
-        <input type="text" id="username" placeholder="Your Name" />
+        <h2>Your Feedback Matters To Us!</h2>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="e.g. cheapweb@gmail.com" />
+
+        <label for="username">Name</label>
+        <input type="text" id="username" placeholder="e.g. Alex" />
+
+        <label for="comment">Your feedback</label>
         <textarea id="comment" placeholder="Write your comment..."></textarea>
 
         <div class="stars" id="stars">
@@ -185,15 +227,20 @@
       <p>&copy; 2025 CheapWeb. All rights reserved.</p>
     </footer>
 
-    <script>
-      // 🔗 Your Google App Script URL
-      const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbxijUIlBAnNNBTxFqu0tbe4FXHjaoM8nGFp-QcjCMAn3rUb8LCv-ZT0vGDpEI0GkE8Zeg/exec";
+    <div id="thankYouPopup" class="thankyou-overlay">
+      <div class="thankyou-box">
+        <h2>Thank You!</h2>
+        <p>Your feedback has been submitted successfully.</p>
+        <button onclick="closeThankYou()" class="thankyou-btn">Close</button>
+      </div>
+    </div>
 
+    <script>
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwegmAudJn5R4574myZHG_ElpCx6GU5YsLKMHxttXfYetyFME569JxwNob7mfRuoBVUTQ/exec";
       let rating = 0;
       const stars = document.querySelectorAll(".star");
 
-      // ⭐ Star rating selection
       stars.forEach((s) => {
         s.addEventListener("click", () => {
           rating = Number(s.dataset.value);
@@ -207,17 +254,40 @@
         });
       }
 
-      // ⭐ SAVE review to Google Sheets
+      function showThankYou() {
+        document.getElementById("thankYouPopup").style.display = "flex";
+      }
+      function closeThankYou() {
+        document.getElementById("thankYouPopup").style.display = "none";
+      }
+
       async function saveEntry() {
         const name = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
         const comment = document.getElementById("comment").value.trim();
 
-        if (!name || !comment || rating === 0) {
-          alert("Please fill in all fields and select a rating.");
+        if (!name || !email || !comment || rating === 0) {
+          alert(
+            "Please fill in all fields, including your email, and select a rating."
+          );
           return;
         }
 
-        const payload = { username: name, comment: comment, rating: rating };
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+
+        let redirectTab = null;
+        if (rating === 5) redirectTab = window.open("about:blank", "_blank");
+
+        const payload = {
+          username: name,
+          email: email,
+          comment: comment,
+          rating: rating,
+        };
 
         await fetch(SCRIPT_URL, {
           method: "POST",
@@ -225,9 +295,12 @@
           body: JSON.stringify(payload),
         });
 
-        alert("Thanks for your feedback!");
+        showThankYou();
+
+        if (redirectTab) redirectTab.location.href = "https://www.google.com";
 
         document.getElementById("username").value = "";
+        document.getElementById("email").value = "";
         document.getElementById("comment").value = "";
         rating = 0;
         updateStars();
@@ -235,7 +308,6 @@
         fetchReviews();
       }
 
-      // ⭐ LOAD reviews from Google Sheets
       async function fetchReviews() {
         const displayBox = document.getElementById("displayBox");
         displayBox.innerHTML = "<p>Loading reviews...</p>";
@@ -254,11 +326,10 @@
 
           reviews.forEach((r) => {
             totalRating += r.rating;
-
             displayBox.innerHTML += `
               <div class="entry-box">
                 <div class="entry-header">
-                  <strong>${r.username}</strong>
+                  <strong>@${r.username}</strong>
                   <span>${"★".repeat(r.rating)}${"☆".repeat(
               5 - r.rating
             )}</span>
@@ -269,14 +340,11 @@
           });
 
           const avg = totalRating / reviews.length;
-
           document.getElementById("avgStars").innerText =
             "★".repeat(Math.round(avg)) + "☆".repeat(5 - Math.round(avg));
-
           document.getElementById(
             "avgText"
           ).innerText = `Average Rating: ${avg.toFixed(1)} / 5`;
-
           document.getElementById("avgCount").innerText = `Based on ${
             reviews.length
           } review${reviews.length > 1 ? "s" : ""}.`;
@@ -285,7 +353,6 @@
         }
       }
 
-      // Auto-run on page load
       fetchReviews();
     </script>
   </body>
