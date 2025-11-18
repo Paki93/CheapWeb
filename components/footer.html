@@ -1,115 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Clone — same color</title>
-    <style>
-      /* put your exact site colors here */
-      :root {
-        --brand-1: #255, 255, 255; /* primary */
-        --brand-2: #264653; /* dark */
-        --accent: #e76f51; /* accent */
-        --muted: #f4f4f4; /* background / muted */
-        --text: #222222;
-      }
 
-      body {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial;
-        margin: 0;
-        color: var(--text);
-        background: var(--muted);
-        line-height: 1.5;
-      }
+<link rel="stylesheet" href="style.css" />
 
-      header {
-        background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
-        color: white;
-        padding: 48px 24px;
-      }
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 32px;
-      }
+<footer class="cw-footer">
+  <div class="cw-footer-inner">
 
-      .hero {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(20, 20, 20, 0.08);
-        padding: 20px;
-      }
+    <!-- Social icons (left) -->
+    <div class="cw-footer-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+    </div>
 
-      .btn {
-        display: inline-block;
-        padding: 10px 18px;
-        border-radius: 8px;
-        background: var(--accent);
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-      }
+    <!-- Footer info (left) -->
+    <div class="cw-footer-info">
+      <h3>CheapWeb</h3>
+      <p>Professional, affordable and modern websites tailored to your business needs.</p>
+      <h4>Services</h4>
+      <ul>
+          <li><a href="personal.html">Personal Website</a></li>
+          <li><a href="bronze.html">Business Bronze Website</a></li>
+          <li><a href="silver.html">Business Silver Website</a></li>
+          <li><a href="gold.html">Business Gold Website</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">SEO</a></li>
+          <li>Payment</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+  
+      <h4>Company</h4>
+      <ul>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Carier</a></li>
+        <li><a href="#booking">Contact Us</a></li>
+        <li><a href="payment.html">Packages</a></li>
+        <li>Portfolio</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
 
-      footer {
-        padding: 24px;
-        text-align: center;
-        color: #666;
-      }
-      /* small utility to mimic typical wix spacing/colors */
-      .muted-text {
-        color: #65707a;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Site Title — same color clone</h1>
-        <p class="muted-text">
-          Header with primary gradient (use your exact colors in :root)
-        </p>
-      </div>
-    </header>
+      <h4>Contact</h4>
+     <!--<p>Email: support@cheapweb.com</p>--> 
+      <p>Phone: +447540296005</p>
+    </div>
+  </div>
 
-    <main class="container" role="main">
-      <section class="hero">
-        <div style="flex: 1">
-          <h2>Hero heading</h2>
-          <p class="muted-text">
-            Short description. Colors come from CSS variables at the top.
-          </p>
-          <p><a href="#" class="btn">Primary action</a></p>
-        </div>
-        <div style="width: 360px">
-          <div class="card">
-            <h3>Card title</h3>
-            <p class="muted-text">Card body with the same color system.</p>
-          </div>
-        </div>
-      </section>
-
-      <section style="margin-top: 28px">
-        <div class="card">
-          <h3>Content</h3>
-          <p class="muted-text">
-            More content — you can style component backgrounds, borders, icons
-            using the same variables.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer>© <span id="year"></span> — Small footer text</footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
+  <!-- Copyright centered -->
+  <div class="cw-footer-bottom">
+    <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+  </div>
+</footer>
