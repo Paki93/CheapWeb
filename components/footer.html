@@ -1,10 +1,103 @@
+<!-- FONT AWESOME ICONS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
 <link rel="stylesheet" href="style.css" />
 
+<style>
+  /* Footer Container */
+  .cw-footer {
+    background: #f3f3f3; /* darker white background */
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    border-top: 1px solid #ddd;
+  }
+
+  /* Inner Flex Layout */
+  .cw-footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px 35px;
+    display: flex;
+    flex-direction: column; /* everything left-aligned */
+    gap: 25px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  /* Social Icons */
+  .cw-footer-social a {
+    color: #122c53;
+    font-size: 1.4rem;
+    margin-right: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .cw-footer-social a:hover {
+    opacity: 0.7;
+  }
+
+  /* Footer Info */
+  .cw-footer-info h3 {
+    margin-bottom: 8px;
+    color: #122c53;
+    font-weight: 600;
+  }
+
+  .cw-footer-info p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .cw-footer-info h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #122c53;
+  }
+
+  /* Lists */
+  .cw-footer-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .cw-footer-info ul li {
+    margin-bottom: 6px;
+  }
+  .cw-footer-info ul li a {
+    text-decoration: none;
+    color: #444;
+    transition: 0.2s;
+  }
+  .cw-footer-info ul li a:hover {
+    color: #122c53;
+  }
+
+  /* Footer Bottom */
+  .cw-footer-bottom {
+    text-align: center;
+    padding: 12px 0;
+    background: #ececec;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 700px) {
+    .cw-footer-inner {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+</style>
+
 <footer class="cw-footer">
   <div class="cw-footer-inner">
-
-    <!-- Social icons (left) -->
+    <!-- Social Icons -->
     <div class="cw-footer-social">
       <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -12,21 +105,31 @@
       <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
     </div>
 
-    <!-- Footer info (left) -->
+    <!-- Footer Info -->
     <div class="cw-footer-info">
       <h3>CheapWeb</h3>
-      <p>Professional, affordable and modern websites tailored to your business needs.</p>
+      <p>
+        Professional, affordable and modern websites tailored to your business
+        needs.
+      </p>
+
       <h4>Services</h4>
       <ul>
-          <li><a href="personal.html">Personal Website</a></li>
-          <li><a href="bronze.html">Business Bronze Website</a></li>
-          <li><a href="silver.html">Business Silver Website</a></li>
-          <li><a href="gold.html">Business Gold Website</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">SEO</a></li>
-          <li>Payment</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-  
+        <li><a href="personal.html">Personal Website</a></li>
+        <li><a href="bronze.html">Business Bronze Website</a></li>
+        <li><a href="silver.html">Business Silver Website</a></li>
+        <li><a href="gold.html">Business Gold Website</a></li>
+        <li>
+          <a
+            href="https://en.wikipedia.org/wiki/Search_engine_optimization"
+            target="_blank"
+            >SEO</a
+          >
+        </li>
+        <li>Payment</li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
       <h4>Company</h4>
       <ul>
         <li><a href="">About Us</a></li>
@@ -34,17 +137,16 @@
         <li><a href="">Carier</a></li>
         <li><a href="#booking">Contact Us</a></li>
         <li><a href="payment.html">Packages</a></li>
-        <li>Portfolio</a></li>
+        <li>Portfolio</li>
         <li><a href="feedback.html">Feedback</a></li>
       </ul>
 
       <h4>Contact</h4>
-     <!--<p>Email: support@cheapweb.com</p>--> 
+      <!-- <p>Email: support@cheapweb.com</p> -->
       <p>Phone: +447540296005</p>
     </div>
   </div>
 
-  <!-- Copyright centered -->
   <div class="cw-footer-bottom">
     <p>&copy; 2025 CheapWeb. All rights reserved.</p>
   </div>
