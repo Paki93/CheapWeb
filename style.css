@@ -7,7 +7,7 @@ nav {
     /* Dark blue background for the navigation bar */
     color: #fff;
     /* Default text color is white */
-    padding: 15px 0;
+    padding: 5px 0;
     /* Vertical padding: 15px top and bottom, 0 left and right */
 
 }
@@ -515,7 +515,7 @@ footer {
     /* White text */
     text-align: center;
     /* Center text */
-    padding: 60px 20px;
+    padding: 20px 20px;
     /* Padding inside footer */
 }
 
@@ -725,11 +725,11 @@ button:hover {
         margin: 20px;
     }
 
-    /* =========================== */
+    /* =========================== non serve
     footer {
         padding: 40px 15px;
         font-size: 0.9rem;
-    }
+    }*/
 
     /* =========================== */
     .call-btn {
