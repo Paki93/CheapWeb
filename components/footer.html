@@ -132,12 +132,15 @@
   /* ------------------------------
    MOBILE RESPONSIVE
 --------------------------------*/
+  /* ------------------------------
+   MOBILE RESPONSIVE FOOTER
+--------------------------------*/
   @media (max-width: 780px) {
     .cw-footer-columns {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* align items to the left */
       gap: 32px;
-      text-align: center;
+      text-align: left; /* text in each column left-aligned */
     }
 
     .cw-footer-col {
@@ -148,8 +151,14 @@
       display: none;
     }
 
+    /* List items aligned left */
     .cw-footer-col ul li {
-      justify-content: center;
+      justify-content: flex-start; /* align icon + text to the left */
+    }
+
+    /* Optional: make social icons align left on mobile */
+    .cw-footer-social {
+      justify-content: flex-start;
     }
   }
 </style>
