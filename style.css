@@ -1,13 +1,14 @@
 /* ===========================
    NAVIGATION STYLES
    =========================== */
-nav {
+   nav {
 
-    background: #0d2344;
+    background: #122c53;
     /* Dark blue background for the navigation bar */
     color: #fff;
     /* Default text color is white */
-    padding: 5px 0;
+    padding: 15px 0;
+    padding-top: 5px;
     /* Vertical padding: 15px top and bottom, 0 left and right */
 
 }
@@ -200,6 +201,32 @@ SUBTITLE
     /* Space below subtitle */
 }
 
+.cw-repeat-nav {
+    background: #122c53;
+    overflow: hidden;
+    padding: 12px 0;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .cw-scroll {
+    display: inline-flex;
+    animation: cw-loop 18s linear infinite;
+  }
+  
+  .cw-scroll span {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+    white-space: pre; /* <-- keeps your exact spacing */
+  }
+  
+  /* smooth infinite scroll */
+  @keyframes cw-loop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
 /* SERVICES SECTION ---------------------------------------------------------------------------------*/
 /* ===========================
    SERVICES SECTION
