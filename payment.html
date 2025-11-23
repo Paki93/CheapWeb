@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CheapWeb - Secure Payment</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
 
   <body>
@@ -23,17 +23,38 @@
       </div>
     </nav>
 
+    
     <!-- Payment Section -->
     <section class="payment-section">
       <div class="container">
-        <h2>Choose your Plan</h2>
-        <p>Choose one of the following package.</p>
+        <!-- Catchy Headline -->
+        <div class="payment-intro">
+          <h2>Get Started with Your Website in 3 Simple Steps</h2>
+        </div>
+    
+        <div class="container">
+          <div class="step-box1">
+            <strong>Step 1:</strong> Choose your <strong> Plan</strong>.
+          </div>
+          <div class="step-box2">
+            <strong>Step 2:</strong> Choose your <strong> Domain Name</strong>.
+          </div>
+          <div class="step-box3">
+            <strong>Step 3:</strong> Choose your <strong> Hosting</strong>.
+          </div>
+        </div>
+        <div class="payment-intro2">
+        <h2>Step 1: Choose your Plan</h2>
+      </div>
+      
 
         <div class="payment-options">
           <div class="payment-card">
             <h3>Personal Website</h3>
             <p>Perfect for students or individual.</p>
             <p class="price">£29/month</p>
+          
+          <a href="personalDet.html" class="detail-btn">See Details</a>
             <a
               href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01"
               target="_blank"
@@ -46,6 +67,7 @@
             <h3>Business Bronze</h3>
             <p>Perfect for small business.</p>
             <p class="price">£49/month</p>
+            <a href="bronze.html" class="detail-btn">See Details</a>
             <a
               href="https://buy.stripe.com/aFa3cw3opceA3th3jY83C00"
               target="_blank"
@@ -58,6 +80,7 @@
             <h3>Business Silver</h3>
             <p>Custom design tailored to your brand with advanced futures.</p>
             <p class="price">£99/month</p>
+            <a href="silverDet.html" class="detail-btn">See Details</a>
             <a
               href="https://buy.stripe.com/4gM28s3op7YkaVJg6K83C02"
               target="_blank"
@@ -69,6 +92,7 @@
             <h3>Business Gold</h3>
             <p>Powerful systems with smart software integration.</p>
             <p class="price">£149/month</p>
+            <a href="goldDet.html" class="detail-btn">See Details</a>
             <a
               href="https://buy.stripe.com/5kQbJ22klceA7Jx3jY83C03"
               target="_blank"
@@ -128,6 +152,81 @@
         background: #2599dd;
       }
  
+      /* payment steps*/
+
+  .payment-section .container {
+    display: flex;
+    flex-direction: column; /* stack boxes vertically */
+    align-items: flex-start; /* align to the left */
+    gap: 15px;
+    max-width: 400px;       /* optional width for the box stack */
+    margin: 0 auto;
+  }
+  
+  .payment-intro h2 {
+    color:#122c53;
+    margin-right: 40px;
+  }
+
+  .payment-intro2 h2 {
+    color:#4f46e5;
+   margin-left: 20px
+  }
+  .step-box1 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid #4f46e5; /* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box2 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid #2599dd;/* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box3 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid green; /* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box1 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: #4f46e5;        /* step number color */
+  }
+  .step-box2 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: #2599dd;         /* step number color */
+  }
+  .step-box3 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: green;         /* step number color */
+  }
+  
+  /* Add extra space after the last step */
+.payment-section .step-box3:last-child {
+  margin-bottom: 60px; /* adjust value as needed */
+}
+
+
     </style>
    <!-- footer -->
    <site-footer></site-footer>
