@@ -1,238 +1,830 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CheapWeb - Secure Payment</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+/* ===========================
+   NAVIGATION STYLES
+   =========================== */
+   nav {
 
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="container nav-container">
-        <div class="container nav-container">
-          <h1 class="logo">
-            <a href="index.html">CheapWeb</a>
-          </h1>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="payment.html" class="active">Packages</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-    </nav>
+    background: #122c53;
+    /* Dark blue background for the navigation bar */
+    color: #fff;
+    /* Default text color is white */
+    padding: 15px 0;
+    padding-top: 5px;
+    /* Vertical padding: 15px top and bottom, 0 left and right */
 
-    
-    <!-- Payment Section -->
-    <section class="payment-section">
-      <div class="container">
-        <!-- Catchy Headline -->
-        <div class="payment-intro">
-          <h2>Get Started with Your Website in 3 Simple Steps</h2>
-        </div>
-    
-        <div class="container">
-          <div class="step-box1">
-            <strong>Step 1:</strong> Choose your <strong> Plan</strong>.
-          </div>
-          <div class="step-box2">
-            <strong>Step 2:</strong> Choose your <strong> Domain Name</strong>.
-          </div>
-          <div class="step-box3">
-            <strong>Step 3:</strong> Choose your <strong> Hosting</strong>.
-          </div>
-        </div>
-        <div class="payment-intro2">
-        <h2>Step 1: Choose your Plan</h2>
-      </div>
-      
+}
 
-        <div class="payment-options">
-          <div class="payment-card">
-            <h3>Personal Website</h3>
-            <p>Perfect for students or individual.</p>
-            <p class="price">£29/month</p>
-          
-          <a href="personalDet.html" class="detail-btn">See Details</a>
-            <a
-              href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01"
-              target="_blank"
-              class="btn-pay"
-              >Subscribe £29</a
-            >
-          </div>
-
-          <div class="payment-card">
-            <h3>Business Bronze</h3>
-            <p>Perfect for small business.</p>
-            <p class="price">£49/month</p>
-            <a href="bronze.html" class="detail-btn">See Details</a>
-            <a
-              href="https://buy.stripe.com/aFa3cw3opceA3th3jY83C00"
-              target="_blank"
-              class="btn-pay"
-              >Subscribe £49</a
-            >
-          </div>
-
-          <div class="payment-card">
-            <h3>Business Silver</h3>
-            <p>Custom design tailored to your brand with advanced futures.</p>
-            <p class="price">£99/month</p>
-            <a href="silverDet.html" class="detail-btn">See Details</a>
-            <a
-              href="https://buy.stripe.com/4gM28s3op7YkaVJg6K83C02"
-              target="_blank"
-              class="btn-pay"
-              >Subscribe £99</a
-            >
-          </div>
-          <div class="payment-card">
-            <h3>Business Gold</h3>
-            <p>Powerful systems with smart software integration.</p>
-            <p class="price">£149/month</p>
-            <a href="goldDet.html" class="detail-btn">See Details</a>
-            <a
-              href="https://buy.stripe.com/5kQbJ22klceA7Jx3jY83C03"
-              target="_blank"
-              class="btn-pay"
-              >Subscribe £149</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #f9f9f9;
-        margin: 0;
-        color: #122c53;
-      }
-      .payment-section {
-        padding: 80px 20px;
-        text-align: center;
-      }
-      .payment-options {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 40px;
-      }
-      .payment-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        transition: transform 0.2s;
-      }
-      .payment-card:hover {
-        transform: translateY(-5px);
-      }
-      .price {
-        font-size: 1.5rem;
-        color: #2599dd;
-        font-weight: bold;
-      }
-      .btn-pay {
-        display: inline-block;
-        margin-top: 15px;
-        background: #122c53;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background 0.3s;
-      }
-      .btn-pay:hover {
-        background: #2599dd;
-      }
- 
-      /* payment steps*/
-
-  .payment-section .container {
+.nav-container {
     display: flex;
-    flex-direction: column; /* stack boxes vertically */
-    align-items: flex-start; /* align to the left */
-    gap: 15px;
-    max-width: 400px;       /* optional width for the box stack */
-    margin: 0 auto;
-  }
-  
-  .payment-intro h2 {
-    color:#122c53;
-    margin-right: 40px;
-  }
+    /* Use Flexbox to arrange child elements */
+    justify-content: space-between;
+    /* Space between logo and links */
+    align-items: center;
+    /* Vertically align items in the center */
+}
 
-  .payment-intro2 h2 {
-    color:#4f46e5;
-   margin-left: 20px
-  }
-  .step-box1 {
-    background-color: #f3f4f6; /* light gray box */
-    padding: 15px 20px;
-    border-left: 5px solid #4f46e5; /* accent on left */
-    border-radius: 8px;
-    display: flex;         /* keep step number and text on same line */
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .step-box2 {
-    background-color: #f3f4f6; /* light gray box */
-    padding: 15px 20px;
-    border-left: 5px solid #2599dd;/* accent on left */
-    border-radius: 8px;
-    display: flex;         /* keep step number and text on same line */
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .step-box3 {
-    background-color: #f3f4f6; /* light gray box */
-    padding: 15px 20px;
-    border-left: 5px solid green; /* accent on left */
-    border-radius: 8px;
-    display: flex;         /* keep step number and text on same line */
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .step-box1 strong {
-    margin-right: 8px;    
-    margin-left: 4px;    /* space between "Step X:" and comment */
-    color: #4f46e5;        /* step number color */
-  }
-  .step-box2 strong {
-    margin-right: 8px;    
-    margin-left: 4px;    /* space between "Step X:" and comment */
-    color: #2599dd;         /* step number color */
-  }
-  .step-box3 strong {
-    margin-right: 8px;    
-    margin-left: 4px;    /* space between "Step X:" and comment */
-    color: green;         /* step number color */
+.logo a {
+    font-weight: 700;
+    /* Bold text for logo */
+    font-size: 1.5 rem;
+    /* Font size of 1.5 rem */
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    /* Display links horizontally */
+    list-style: none;
+    /* Remove bullet points from list */
+    gap: 25px;
+    /* Space of 25px between each link */
+}
+
+/* Link default color */
+.nav-links a {
+    color: #ffffff;
+    /* White text for navigation links */
+    text-decoration: none;
+    /* Remove underline from links */
+    font-weight: 500;
+    /* Medium font weight */
+}
+
+/* Link hover color */
+.nav-links a:hover {
+    color: #2599dd;
+    /* Light blue color when hovered */
+}
+
+/* Active link styling */
+.nav-links a.active {
+    background: #28a745;
+    /* Green background for active link */
+    color: white;
+    /* Text color white */
+    padding: 8px 16px;
+    /* Add padding inside active link */
+    border-radius: 50px;
+    /* Rounded corners */
+    font-weight: bold;
+    /* Bold text */
+    transition: background 0.3s ease;
+    /* Smooth transition when background changes */
+}
+
+.nav-links a.active:hover {
+    background: #218838;
+    /* Darker green on hover */
+}
+/* ===========================
+   page
+   ===========================  ---------------------------------------------------------------------------------*/
+
+.page {
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+/* ===========================
+   BODY STYLES
+   ===========================  ---------------------------------------------------------------------------------*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Default font */
+    margin: 0;
+    /* Remove default margin */
+    background-color: #f8f9fb;
+    /* Page background white */
+    color: #ffffff;
+    /* Default text color white */
+}
+
+/* VIDEO  ---------------------------------------------------------------------------------*/
+
+/* ===========================
+   VIDEO BACKGROUND STYLES
+   =========================== */
+.video-background {
+    position: relative;
+    /* Allows absolute positioning inside */
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Hide overflowing video */
+}
+
+#bg-video {
+    position: absolute;
+    /* Absolute positioning for video */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    object-fit: cover;
+    /* Video covers entire container */
+    transform: translate(-50%, -50%);
+    /* Center using transform */
+    z-index: -1;
+    /* Place behind other elements */
+}
+
+.video-content {
+    position: relative;
+    /* Position relative to parent */
+    color: white;
+    /* Text color white */
+    text-align: center;
+    /* Center text */
+    top: 50%;
+    /* Start from middle of container */
+    transform: translateY(-50%);
+    /* Vertical centering */
+    padding: 0 20px;
+    /* Horizontal padding */
+    opacity: 0;
+    /* Initially hidden */
+    animation: fadeIn 2.5s ease forwards;
+    /* Fade in animation */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        /* Invisible at start */
+        transform: translateY(-20px);
+        /* Slightly above */
+    }
+
+    100% {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateY(-50%);
+        /* Centered */
+    }
+}
+
+.video-content h1 {
+    font-size: 2.5rem;
+    /* Large heading */
+    margin-bottom: 10px;
+    /* Space below heading */
+    animation: fadeIn 3s ease forwards;
+    /* Fade in effect */
+}
+
+.video-content p {
+    font-size: 1.2rem;
+    /* Paragraph font size */
+    animation: fadeIn 4s ease forwards;
+    /* Fade in after heading */
+}
+
+/* SUBTITLE ---------------------------------------------------------------------------------*/
+/* ===========================
+SUBTITLE
+   =========================== */
+.section-title {
+    text-align: center;
+    /* Center title text */
+    font-size: 2rem;
+    /* Font size */
+    margin-bottom: 10px;
+    /* Space below title */
+    color: #122c53;
+    /* Dark blue text */
+}
+
+.section-subtitle {
+    text-align: center;
+    /* Center subtitle */
+    color: #122c53;
+    /* Dark blue text */
+    margin-bottom: 50px;
+    /* Space below subtitle */
+}
+
+.cw-repeat-nav {
+    background: #122c53;
+    overflow: hidden;
+    padding: 12px 0;
+    width: 100%;
+    white-space: nowrap;
   }
   
-  /* Add extra space after the last step */
-.payment-section .step-box3:last-child {
-  margin-bottom: 60px; /* adjust value as needed */
+  .cw-scroll {
+    display: inline-flex;
+    animation: cw-loop 18s linear infinite;
+  }
+  
+  .cw-scroll span {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+    white-space: pre; /* <-- keeps your exact spacing */
+  }
+  
+  /* smooth infinite scroll */
+  @keyframes cw-loop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+/* SERVICES SECTION ---------------------------------------------------------------------------------*/
+/* ===========================
+   SERVICES SECTION
+   =========================== */
+
+/* all service box up and left space*/
+#services {
+    padding: 80px 20px;
+    /* up space, right left space*/
+}
+
+/* all big service box*/
+.container {
+    width: 90%;
+    /* Container takes up 90% of the parent width */
+    max-width: 1300px;
+    /* Maximum width of container is 1100px */
+    margin: 0 auto;
+    /* Center container horizontally */
 }
 
 
-    </style>
-   <!-- footer -->
-   <site-footer></site-footer>
-   <footer>
-     <p>&copy; 2025 CheapWeb. All rights reserved.</p>
-   </footer>
-      <script src="components/footer.js"></script>
-  </body>
-</html>
+/* all writing box*/
+.service-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Service image---------------------------------------------------------------------------------*/
+
+/* all service image*/
+.service-img {
+    max-width: 500px;
+    /* Maximum width */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    width: calc(100% - 1cm);
+    /* Width minus margin */
+    margin: 1cm;
+    /* Margin around image */
+    border-radius: 10px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer on hover */
+    transition: transform 0s ease, box-shadow 0s ease;
+    /* Smooth hover */
+}
+
+/* all service image shadow color*/
+.service-img:hover {
+    transform: scale(1.05);
+    /* Slight zoom */
+    box-shadow: 0 30px 30px #0d2344;
+    /* Brighter shadow */
+}
+
+/* Service text ---------------------------------------------------------------------------------*/
+
+/* all service title*/
+.service-info h3 {
+    font-size: 1.6rem;
+    /* Heading size */
+    margin-bottom: 10px;
+    /* Space below heading */
+    color: #000000;
+}
+
+/* all service subtitle and price */
+.service-info p {
+    margin-bottom: 15px;
+    /* Space below paragraph */
+    line-height: 1.6;
+    /* Line spacing */
+    color: #000000;
+    /* White text */
+}
+
+/* all service text box */
+.service-info ul {
+    list-style: none;
+    /* Remove bullets */
+    padding: 0;
+    /* Remove padding */
+    margin: 0 0 10px;
+    /* Bottom margin */
+    color: #000000;
+}
+
+/* all tex next to img */
+.service-info {
+    flex: 1;
+    /* Take remaining space */
+    margin-left: 50px;
+    margin-right: 60px;
+}
+
+/* all service writing hight space */
+.service-info li {
+    margin: 6px 0;
+    /* Space between list items */
+}
+
+/* service detail button */
+.detail-btn {
+    display: inline-block;
+    background: #28a745;
+    /* Green button */
+    color: #fff;
+    /* White text */
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.detail-btn:hover {
+    background: #218838;
+    /* Darker green on hover */
+    transform: translateY(-2px);
+    /* Subtle lift effect */
+}
+
+/* service box n 2 and 4 */
+.service-box.reverse {
+    flex-direction: row-reverse;
+    /* Swap order of image and text */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Booking Section  ---------------------------------------------------------------------------------*/
+/* ===========================
+   BOOKING SECTION
+   =========================== */
+.booking-section {
+    display: flex;
+    /* Flex layout */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    min-height: 90vh;
+    /* Minimum height 90% viewport */
+    padding: 40px 0;
+    /* Vertical padding */
+}
+
+.booking-card {
+    background: white;
+    /* White background */
+    color: #122c53;
+    /* Dark blue text */
+    padding: 40px;
+    /* Padding inside card */
+    border-radius: 16px;
+    /* Rounded corners */
+    width: 90%;
+    /* Width of card */
+    max-width: 500px;
+    /* Maximum width */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    /* Shadow effect */
+}
+
+.booking-card h2 {
+    text-align: center;
+    /* Center heading */
+    margin-bottom: 25px;
+    /* Space below heading */
+    color: #122c53;
+    /* Heading color */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Space between form groups */
+}
+
+label {
+    display: block;
+    /* Label occupies full width */
+    margin-bottom: 6px;
+    /* Space below label */
+    font-weight: 600;
+    /* Semi-bold text */
+}
+
+input,
+select {
+    width: 100%;
+    /* Full width inputs */
+    padding: 12px;
+    /* Padding inside input */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 15px;
+    /* Text size */
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #122c53;
+    /* Highlight border on focus */
+}
+
+.submit-btn {
+    width: 100%;
+    /* Full width button */
+    background-color: #122c53;
+    /* Dark blue background */
+    color: white;
+    /* White text */
+    padding: 14px;
+    /* Padding inside button */
+    border: none;
+    /* Remove border */
+    border-radius: 8px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor */
+    transition: background 0.1s ease;
+    /* Smooth background change */
+}
+
+.submit-btn:hover {
+    background-color: #28a745;
+    /* Green on hover */
+}
+
+/* ✅ Sticky Call Button ---------------------------------------------------------------------------------*/
+/* ===========================
+   STICKY CALL BUTTON
+   =========================== */
+.call-btn {
+    position: fixed;
+    /* Fixed position */
+    bottom: 15px;
+    /* 15px from bottom */
+    right: 15px;
+    /* 15px from right */
+    background: #28a745;
+    /* Green background */
+    color: #fff;
+    /* White text */
+    padding: 1rem 1.5rem;
+    /* Padding */
+    border-radius: 50px;
+    /* Rounded pill shape */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    /* Bold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Shadow for 3D effect */
+    z-index: 1000;
+    /* Keep above other elements */
+}
+
+.call-btn:hover {
+    background: #218838;
+    /* Darker green on hover */
+}
+
+/* STANDARD PAGE */
+
+/* standard page pay button  ---------------------------------------------------------------------------------*/
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.1 s;
+  }
+  .cta-btn:hover {
+    background: #218838;
+  }
+  
+
+/* FOOTER bottom  ---------------------------------------------------------------------------------*/
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    background: #122c53;
+    /* Dark blue background */
+    color: white;
+    /* White text */
+    text-align: center;
+    /* Center text */
+    padding: 20px 20px;
+    /* Padding inside footer */
+}
+
+
+
+/* ABOUT PAGE  ---------------------------------------------------------------------------------*/
+/*
+.about-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.about-section {
+  margin-bottom: 20px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 15px;
+  padding-left: 0;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.about-section ul {
+  padding-left: 0;
+  list-style: none;
+  color: #444;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.about-section ul li::marker {
+  color: green;
+} */
+
+
+/* SIGN UP  ---------------------------------------------------------------------------------*/
+/*
+.page-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.signup-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.signup-container h1 {
+  margin-bottom: 10px;
+  color: #122c53;
+  ;
+}
+
+.signup-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  width: 25%;
+  background: #122c53;
+  ;
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+button:hover {
+  background: #28a745;
+}
+
+.login-link {
+  margin-top: 15px;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #122c53;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+*/
+
+/* ===========================
+   MOBILE and tablet RESPONSIVE 
+   =========================== */
+
+/* phone ---------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+
+
+    /* Stack nav items vertically */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+    }
+
+    nav {
+        position: relative;
+        z-index: 999;
+    }
+
+    /* =========================== */
+    .video-background {
+        height: 80vh;
+    }
+
+    .video-content {
+        top: 45%;
+        transform: translateY(-50%);
+        padding: 0 15px;
+    }
+
+    .video-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .video-content p {
+        font-size: 1rem;
+    }
+
+    /* =========================== */
+
+    /* service container Container  */
+    .container {
+        width: 99%;
+    }
+
+    /* =========================== */
+    .service-box,
+    .service-box.reverse {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .service-img {
+        max-width: 100%;
+        margin: 0 20px;
+        margin-top: 20px;
+    }
+
+    /* =========================== */
+    .booking-card {
+        width: 80%;
+        margin: 20px;
+    }
+
+    /* =========================== non serve
+    footer {
+        padding: 40px 15px;
+        font-size: 0.9rem;
+    }*/
+
+    /* =========================== */
+    .call-btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+  
+/*most probably tablet/*   ---------------------------------------------------------------------------------*/
+
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .video-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-info p {
+        font-size: 0.95rem;
+    }
+
+    .video-background {
+        height: 70vh;
+    }
+
+    .video-content {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #4f46e5, #6d28d9);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .hero-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  }
+  
+  
+
+  
