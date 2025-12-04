@@ -8,10 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 </head>
-
 <body>
   
-
   <!-- NAVIGATION -->
   <nav>
     <div class="container nav-container">
@@ -29,40 +27,19 @@
     </div>
   </nav>
 
+  <!-- page div-->
   <div class="page">
-  <!-- HERO / HEADER -->
   <main>
-      <!-- <section class="hero-section" aria-label="Standard package hero">
-      <div class="video-background" style="min-height:320px;">
-  
-  <picture>
-          <source srcset="assets/images/advanced_pic.jpeg" type="image/avif" />
-          <img src="assets/images/business.avif" alt="" aria-hidden="true" style="display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;" />
-        </picture> 
-
-        <div class="video-overlay" style="background: linear-gradient(180deg, rgba(13,35,68,0.6), rgba(13,35,68,0.75));"></div>
-
-        <div class="video-content container" style="padding:80px 0;">
-          <h1>Business Bronze</h1>
-         
-          <div style="margin-top:18px;">
-            <a href="payment.html" class="cta-btn" aria-label="Choose Standard Package">Subscribe now</a>
-          </div>
-        </div>
-      </div>
-    </section>--> 
 
     <section class="section" aria-labelledby="details">
         <div class="container">
           <h2 id="details" class="section-title">Business Bronze</h2>
-          <p class="section-subtitle">Perfect for SMALL businesses and start-up. 1 responsive page, simple, fast, and effective.</p>
+          <p class="section-subtitle">Perfect for small businesses and start-up. 1 responsive page, simple, fast, and effective.</p>
           <h2 id="details" class="section-title">What's Included</h2>
 
- 
+  <!-- Multi-Page Service Grid -->
+    <div class="service-grid">
 
-
-          <!-- Multi-Page Service Grid -->
-<div class="service-grid">
   <!-- Card 1: Multi-Page Design -->
   <article class="service-card">
     <div class="service-info">
@@ -98,10 +75,41 @@
           </div>
         </div>
       </section>
+
+ <!-- FAQs -->
+ <section class="section" aria-labelledby="faqs">
+  <div class="container">
+    <h2 id="faqs" class="section-title">Frequently Asked Questions</h2>
+    <div style="max-width:900px;margin:24px auto;color:#333;">
+      <details style="margin-bottom:12px;padding:14px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);">
+        <summary style="font-weight:600;cursor:pointer;">Is hosting included?</summary>
+        <p style="margin-top:8px;">
+          Hosting is not automatically included — but we will advise a suitable, low-cost hosting provider and help configure your site. If you want, we can arrange hosting for you at an additional fee.
+        </p>
+      </details>
+
+      <details style="margin-bottom:12px;padding:16px;background:#fff;border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,0.04);">
+        <summary style="font-weight:600;cursor:pointer;">Can I request extra pages later?</summary>
+        <p style="margin-top:8px;">Yes — you can easily add new pages such as Blog, Pricing, or Testimonials at any time. We’ll quote based on your exact needs.</p>
+      </details>
+
+      <details style="margin-bottom:12px;padding:16px;background:#fff;border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,0.04);">
+        <summary style="font-weight:600;cursor:pointer;">Is SEO really included?</summary>
+        <p style="margin-top:8px;">No, we implement SEO best practices in Silver and Gold package.</p>
+      </details>
+
+      <details style="margin-bottom:12px;padding:16px;background:#fff;border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,0.04);">
+        <summary style="font-weight:600;cursor:pointer;">Can you connect my domain?</summary>
+        <p style="margin-top:8px;">Absolutely. We’ll assist with domain setup and DNS configuration, ensuring your website is fully accessible under your custom URL.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
   </main>
-
+<!-- page div-->
 </div>
-
+<!-- style -->
 <style>
 
   /* Grid container for service cards */
@@ -115,7 +123,6 @@
 
 /* Unified card style */
 .service-card {
-
   margin-bottom:60px;
   background: #fff;
   border-radius: 12px;
