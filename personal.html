@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,66 +28,72 @@
     </div>
   </nav>
 
-  <!-- HERO / HEADER -->
+  <!-- page div-->
+  <div class="page">
   <main>
-   <!-- <section class="hero-section" aria-label="Standard package hero">
-      <div class="video-background" style="min-height:320px;">
-      <picture>
-          <source srcset="assets/images/business.avif" type="image/avif" />
-          <img src="assets/images/business.avif" alt="" aria-hidden="true" style="display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;" />
-        </picture> 
 
-        <div class="video-overlay" style="background: linear-gradient(180deg, rgba(13,35,68,0.6), rgba(13,35,68,0.75));"></div>
-
-        <div class="video-content container" style="padding:80px 0;">
-          <h1>Standard Package</h1>
-         
-          <div style="margin-top:18px;">
-            <a href="payment.html" class="cta-btn" aria-label="Choose Standard Package">Subscribe now</a>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- SUMMARY / KEY POINTS -->
-    <section class="section" aria-labelledby="what-includes">
+    <section class="section" aria-labelledby="details">
       <div class="container">
         <h2 id="what-includes" class="section-title">Personal Website</h2>
-        <p class="section-subtitle">Perfect for individual or student looking for career growth (e.g. CV, P.Portfolio) or link an online automated payment.</p>
-        <h2 id="what-includes" class="section-title">What's Included</h2>
+          <p class="section-subtitle">Perfect for individual or student looking for career growth (e.g. CV, P.Portfolio) or link an online automated payment.</p>
+        <h2 id="details" class="section-title">What's Included</h2>
 
-          <!-- SUMMARY / POINTS  2 -->
-        <div class="service-box">
-          <div class="service-info">
-            <ul>
-              <li>✅ 1 page responsive design</li>
-              <li>✅ Mobile-friendly</li>
-              <li>✅ Delivery time: 2-3 days</li>
-            </ul>
-            </div>
-            <a href="personalDet.html" class="detail-btn">See Details</a>
-          </div>
- </div>
-</div>
-</section>
-   
-    <!-- PRICE & CTA -->
-    <section class="section" aria-labelledby="price-cta" style="background:#f7fbff;padding:50px 0 80px;">
-      <div class="container" style="max-width:900px;text-align:center;">
-        <div style="display:inline-block;background:#fff;padding:28px 36px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.06);margin-top:18px;">
-          <p style="font-size:1.2rem;margin-bottom:8px;color:#0d2344;font-weight:600;">Personal Website</p>
-          <p style="font-size:1.6rem;color:#0d2344;font-weight:700;margin:0 0 16px;">£29 / month</p>
-          <p style="color:#555;max-width:720px;margin:0 auto 18px;">
-         Cancel anytime - no hidden cost.
-          </p>
-          <div style="display:flex;gap:12px;justify-content:center;">
-            <a  href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01" class="cta-btn" aria-label="Purchase Standard Package">Subscribe Now</a>
-          </div>
-        </div>
+        <!-- Multi-Page Service Grid -->
+        <div class="service-grid">
+ 
+          <!-- Card 1 -->
+         <article class="service-card">
+           <div class="service-info">
+             <h4>1 Page Responsive Design</h4>
+             <p>A clean and modern one-page layout that showcases your content effectively — perfect to show your skills, advertise your side job.</p>
+           </div>
+         </article>
+         
+         <!-- Card 2 -->
+         <article class="service-card">
+           <div class="service-info">
+             <h4>Mobile-Friendly</h4>
+             <p>Designed to look perfect on all mobile devices — fast, responsive, and user-friendly for seamless browsing.</p>
+           </div>
+         </article>
+         
+         <!-- Card 3 -->
+         <article class="service-card">
+           <div class="service-info">
+             <h4>Free Consultation</h4>
+             <p>Includes a free planning session to understand your goals and tailor the design perfectly to your needs.</p>
+           </div>
+         </article>
+           </div>
+
+         </div>
+         </section>
+
+         <h2 id="details" class="section-title">Subscribe Now</h2>
+  <!-- Payment Section -->
+  <section class="payment-section">
+    <div class="container">
+      <!-- Catchy Headline -->
+      <div class="payment-intro">
       </div>
+  
+     <!--payment BOX 1--> 
+        <div class="payment-options">
+            <div class="payment-card">
+              <h3>Personal Website</h3>
+              <p>Perfect for students or individual.</p>
+              <p class="price">£29/month</p>
+             <!--payment-btn--> 
+            <a 
+                href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01"
+                target="_blank"
+                class="btn-pay"
+                >Subscribe £29</a
+              >
+            </div>
+        </div>
     </section>
-
-    <!-- FAQs -->
+          <!-- FAQs -->
     <section class="section" aria-labelledby="faqs">
       <div class="container">
         <h2 id="faqs" class="section-title">Frequently Asked Questions</h2>
@@ -124,73 +131,144 @@
       </div>
     </section>
 
-    <!-- CONTACT / BOOKING -->
-   
-  </main>
+        </main>
+         <!-- page div-->
+        </div>
+       
+        
+          <!-- Optional small script for smooth focus after submitting (keeps inline; replace with your script.js if needed) -->
+        <style>
+          /* PAYMENT DETAIL PAGE*/
+/* PAYMENT */
+.payment-section {
+    margin-bottom: 80px;
+    text-align: center;
+    color: #122c53;
 
+}
 
-  <style>
-    /* Grid container for cards */
+.payment-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.payment-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.5s;
+    margin-left: 30px;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #2599dd;
+    font-weight: bold;
+}
+
+.btn-pay {
+    display: inline-block;
+    margin-top: 15px;
+    background: #122c53;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.1s;
+}
+
+.btn-pay:hover {
+    background: #2599dd;
+}
+
+/* payment steps*/
+
+.payment-section .container {
+    display: flex;
+    flex-direction: column;
+    /* stack boxes vertically */
+    align-items: flex-start;
+    /* align to the left */
+    gap: 15px;
+    max-width: 400px;
+    /* optional width for the box stack */
+    margin: 0 auto;
+}
+
+/* DETAIL PAGE */
+/* Grid container for cards */
 .service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 34px;
-  align-items: stretch; /* Ensures all cards are equal height */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 34px;
+    align-items: stretch;
+    /* Ensures all cards are equal height */
 }
 
 /* Individual service card styling */
 .service-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  color: #000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Ensures headings align evenly */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 60px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    color: #000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Ensures headings align evenly */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Card hover effect */
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Inner text layout */
 .service-info {
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Fill parent height */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Fill parent height */
 }
 
 /* Title styling */
 .service-info h4 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #122c53;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #122c53;
 }
 
 /* Paragraph text styling */
 .service-info p {
-  margin-top: 0;
-  flex-grow: 1; /* Keeps bottom padding consistent even if text length differs */
-  line-height: 1.6;
-  color: #333;
+    margin-top: 0;
+    flex-grow: 1;
+    /* Keeps bottom padding consistent even if text length differs */
+    line-height: 1.6;
+    color: #333;
 }
 
-  </style>
-
-  <!-- Optional small script for smooth focus after submitting (keeps inline; replace with your script.js if needed) -->
-
-   <!-- footer -->
-   <site-footer></site-footer>
-   <footer>
-     <p>&copy; 2025 CheapWeb. All rights reserved.</p>
-   </footer>
-    <script src="components/footer.js"></script>
-</body>
-</html>
+        </style>
+           <!-- footer -->
+           <site-footer></site-footer>
+           <footer>
+             <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+           </footer>
+            <script src="components/footer.js"></script>
+        </body>
+        </html>
+        
