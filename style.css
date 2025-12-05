@@ -1,7 +1,7 @@
 /* ===========================
    NAVIGATION STYLES
    =========================== */
-   nav {
+nav {
 
     background: #122c53;
     /* Dark blue background for the navigation bar */
@@ -76,6 +76,7 @@
     background: #218838;
     /* Darker green on hover */
 }
+
 /* ===========================
    page
    ===========================  ---------------------------------------------------------------------------------*/
@@ -84,6 +85,7 @@
     padding-left: 1cm;
     padding-right: 1cm;
 }
+
 /* ===========================
    BODY STYLES
    ===========================  ---------------------------------------------------------------------------------*/
@@ -151,6 +153,27 @@ body {
     /* Fade in animation */
 }
 
+/* INDEX BUY BUTTON */
+.buy-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid rgb(255, 255, 255);
+    background: linear-gradient(135deg, #4f46e5, #6d28d9);
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    /* Makes it round */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.1s ease;
+    margin-bottom: 30px;
+}
+
+.buy-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+
+}
+
 /* Fade-in animation keyframes */
 @keyframes fadeIn {
     0% {
@@ -183,24 +206,8 @@ body {
     animation: fadeIn 4s ease forwards;
     /* Fade in after heading */
 }
-/* START BUTTON */
-.hero-button {
-    display: inline-block;
-    padding: 14px 32px;
-    background: linear-gradient(135deg, #4f46e5, #6d28d9);
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  
-  .hero-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  }
+
+
 /* SUBTITLE ---------------------------------------------------------------------------------*/
 /* ===========================
 SUBTITLE
@@ -231,26 +238,32 @@ SUBTITLE
     padding: 12px 0;
     width: 100%;
     white-space: nowrap;
-  }
-  
-  .cw-scroll {
+}
+
+.cw-scroll {
     display: inline-flex;
     animation: cw-loop 18s linear infinite;
-  }
-  
-  .cw-scroll span {
+}
+
+.cw-scroll span {
     font-size: 1.15rem;
     font-weight: 600;
     color: white;
-    white-space: pre; /* <-- keeps your exact spacing */
-  }
-  
-  /* smooth infinite scroll */
-  @keyframes cw-loop {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
+    white-space: pre;
+    /* <-- keeps your exact spacing */
+}
+
+/* smooth infinite scroll */
+@keyframes cw-loop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 /* SERVICES SECTION ---------------------------------------------------------------------------------*/
 /* ===========================
    SERVICES SECTION
@@ -549,30 +562,33 @@ select:focus {
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.1 s;
-  }
-  .cta-btn:hover {
+}
+
+.cta-btn:hover {
     background: #218838;
-  }
-  
-  /* MORE BUTTON */
-  .more-btn {
+}
+
+/* INDEX MORE BUTTON */
+.more-btn {
     display: inline-block;
     padding: 10px 25px;
     border: 2px solid black;
     background-color: white;
     color: black;
-    border-radius: 50px; /* Makes it round */
+    border-radius: 50px;
+    /* Makes it round */
     text-decoration: none;
     font-weight: 600;
     transition: 0.1s ease;
     margin-bottom: 30px;
-  }
-  
-  .more-btn:hover {
+}
+
+.more-btn:hover {
     background-color: #122c53;
     color: white;
-  }
-  
+}
+
+
 /* FOOTER bottom  ---------------------------------------------------------------------------------*/
 /* ===========================
    FOOTER
@@ -807,7 +823,7 @@ button:hover {
     }
 }
 
-  
+
 /*most probably tablet/*   ---------------------------------------------------------------------------------*/
 
 @media (max-width: 480px) {
@@ -841,7 +857,3 @@ button:hover {
         transform: translateY(-50%);
     }
 }
-
-
-
-  
