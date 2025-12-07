@@ -31,7 +31,7 @@
       <div class="video-content">
         <h1>CheapWeb</h1>
         <h2>UK n1 <strong>affordable websites</strong></h2>
- 
+
         <a href="package.html" class="buy-btn">Get Started</a>
       </div>
     </div>
@@ -54,9 +54,10 @@
     <nav class="cw-repeat-nav">
       <div class="cw-scroll">
         <span style="font-weight: 300; white-space: nowrap">
-          •••••••••• UK N1 AFFORDABLE WEBSITES • PERSONAL WEBSITE • BUSINESS WEBSITE • CONTACT
-          FORM • BOOKING SYSTEM • PAYMENT SERVICE • SEO INTEGRATION • GOOGLE
-          RATING PLAN • SOCIAL CONNECTION • PROFESSIONAL • RELIABLE • FAST DELIVERY • FREE CONSULTATION •••••••••••
+          •••••••••• UK N1 AFFORDABLE WEBSITES • PERSONAL WEBSITE • BUSINESS
+          WEBSITE • CONTACT FORM • BOOKING SYSTEM • PAYMENT SERVICE • SEO
+          INTEGRATION • GOOGLE RATING PLAN • SOCIAL CONNECTION • PROFESSIONAL •
+          RELIABLE • FAST DELIVERY • FREE CONSULTATION •••••••••••
         </span>
       </div>
     </nav>
@@ -184,7 +185,7 @@
         <div class="booking-card">
           <h1>Still have questions?</h1>
           <h2>Book Your Free Consultation</h2>
-          <form action="#" method="POST">
+          <form id="booking-form">
             <div class="form-group">
               <label for="name">Full Name</label>
               <input
@@ -255,6 +256,50 @@
     </footer>
 
     <script src="components/footer.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+
+    <!-- EmailJS CDN -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      // Initialize EmailJS (REPLACE with your real public key)
+      (function () {
+        emailjs.init("XdTALZT0HqT-I9G9-"); // 🔥 Replace with your EmailJS Public Key
+      })();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("booking-form");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const templateParams = {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            website_type: document.getElementById("website-type").value,
+            date: document.getElementById("date").value,
+            time: document.getElementById("time").value,
+          };
+
+          emailjs
+            .send("service_8ibg1aq", "template_1k31g6r", templateParams)
+            .then(
+              function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Your consultation request has been sent successfully!");
+                form.reset();
+              },
+              function (error) {
+                console.error("FAILED...", error);
+                alert("Failed to send message. Please try again.");
+              }
+            );
+        });
+      });
+    </script>
   </body>
 </html>
