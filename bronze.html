@@ -72,7 +72,7 @@
       </p>
     </div>
   </article>
-</div>
+</div>  <!-- FAQ extender  -->
 
           </div>
         </div>
@@ -102,11 +102,14 @@
       </div>
     </div>
   </section>
+
+   
  <!-- FAQs -->
  <section class="section" aria-labelledby="faqs">
   <div class="container">
     <h2 id="faqs" class="section-title">Frequently Asked Questions</h2>
     <div style="max-width:900px;margin:24px auto;color:#333;">
+     
       <details style="margin-bottom:12px;padding:14px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);">
         <summary style="font-weight:600;cursor:pointer;">Is hosting included?</summary>
         <p style="margin-top:8px;">
@@ -128,6 +131,7 @@
         <summary style="font-weight:600;cursor:pointer;">Can you connect my domain?</summary>
         <p style="margin-top:8px;">Absolutely. We’ll assist with domain setup and DNS configuration, ensuring your website is fully accessible under your custom URL.</p>
       </details>
+
     </div>
   </div>
 </section>
@@ -139,19 +143,25 @@
 <style>
   /* PAYMENT DETAIL PAGE*/
 /* PAYMENT */
+/* PAYMENT */
 .payment-section {
     margin-bottom: 80px;
     text-align: center;
     color: #122c53;
+}
 
+.payment-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ CENTER */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .payment-options {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
+    justify-content: center; /* ✅ CENTER */
+    width: 100%;
 }
 
 .payment-card {
@@ -161,7 +171,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
     transition: transform 0.5s;
-    margin-left: 30px;
+    margin-left: 0; /* ✅ REMOVE OFFSET */
 }
 
 .payment-card:hover {
