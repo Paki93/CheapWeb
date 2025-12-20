@@ -102,7 +102,8 @@
     <h4>Delivery Time: 1 Week</h4>
     <p>Fast and efficient — your complete, ready-to-launch website delivered within just one week.</p>
   </div>
-</article>     
+</article>  
+</div>   
           </div>
         </div>
       </section>
@@ -172,19 +173,25 @@
 <style>
   /* PAYMENT DETAIL PAGE*/
 /* PAYMENT */
+/* PAYMENT */
 .payment-section {
     margin-bottom: 80px;
     text-align: center;
     color: #122c53;
+}
 
+.payment-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ CENTER */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .payment-options {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
+    justify-content: center; /* ✅ CENTER */
+    width: 100%;
 }
 
 .payment-card {
@@ -194,7 +201,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
     transition: transform 0.5s;
-    margin-left: 30px;
+    margin-left: 0; /* ✅ REMOVE OFFSET */
 }
 
 .payment-card:hover {
