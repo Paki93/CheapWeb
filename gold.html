@@ -103,7 +103,7 @@
     <p>Fast delivery based on project size — your fully functional website ready within one to two weeks.</p>
   </div>
 </article>   
-  
+</div>
           </div>
         </div>
       </section>
@@ -159,7 +159,7 @@
               <summary style="font-weight:600;cursor:pointer;">How do updates and support work?</summary>
               <p style="margin-top:8px;">You’ll get free software update so your website will be always fast and interactive. Our team is available via email or chat for assistance whenever needed.</p>
             </details>
-  
+
           </div>
         </div>
       </section>
@@ -171,19 +171,25 @@
 <style>
     /* PAYMENT DETAIL PAGE*/
 /* PAYMENT */
+/* PAYMENT */
 .payment-section {
     margin-bottom: 80px;
     text-align: center;
     color: #122c53;
+}
 
+.payment-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ CENTER */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .payment-options {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
+    justify-content: center; /* ✅ CENTER */
+    width: 100%;
 }
 
 .payment-card {
@@ -193,7 +199,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
     transition: transform 0.5s;
-    margin-left: 30px;
+    margin-left: 0; /* ✅ REMOVE OFFSET */
 }
 
 .payment-card:hover {
