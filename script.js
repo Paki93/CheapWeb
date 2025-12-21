@@ -52,7 +52,10 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("accept-cookies");
     const rejectBtn = document.getElementById("reject-cookies");
-  
+
+          // TEST MODE: Always show banner on refresh
+localStorage.removeItem("cookieConsent");
+      
     if (!banner || !acceptBtn || !rejectBtn) return;
     const choice = localStorage.getItem("cookieConsent");
   
