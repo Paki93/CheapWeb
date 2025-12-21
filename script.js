@@ -46,3 +46,28 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         );
     });
   });
+
+// cookies
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+  
+    if (!banner || !acceptBtn || !rejectBtn) return;
+    const choice = localStorage.getItem("cookieConsent");
+  
+    if (choice) {
+      banner.classList.add("cookie-hidden");
+    }
+  
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      banner.classList.add("cookie-hidden");
+    });
+  
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "rejected");
+      banner.classList.add("cookie-hidden");
+    });
+  });
+  
