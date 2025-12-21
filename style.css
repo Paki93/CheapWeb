@@ -82,8 +82,8 @@ nav {
    ===========================  ---------------------------------------------------------------------------------*/
 
 .page {
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
 }
 
 /* ===========================
@@ -432,7 +432,8 @@ SUBTITLE
     /* White background */
     color: #122c53;
     /* Dark blue text */
-    padding: 40px;
+  padding: 40px;
+  padding-right: 60px;
     /* Padding inside card */
     border-radius: 16px;
     /* Rounded corners */
@@ -981,4 +982,24 @@ button:hover {
       min-width: 0;
     }
   }
-  
+    
+  /* =========================
+   booking
+     ========================= */
+  @media (max-width: 640px) {
+
+    .booking-section {
+        padding-left: 0px !important;   /* ≈ 2mm */
+        padding-right: 16px !important;  /* ≈ 2mm */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+      }
+    
+      .booking-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+      }
+
+  }
