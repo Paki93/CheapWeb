@@ -828,11 +828,7 @@ button:hover {
    ========================= */
    @media (max-width: 640px) {
     /* remove padding that might come from parent wrappers */
-    body, .page {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-  
+ 
     .booking-section {
       padding-left: 8px !important;  /* ~1mm */
       padding-right: 8px !important; /* ~1mm */
