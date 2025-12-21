@@ -823,27 +823,7 @@ button:hover {
     }
 }
 
-/* =========================
-   Booking form: 1mm edge on mobile
-   ========================= */
-   @media (max-width: 640px) {
-    /* remove padding that might come from parent wrappers */
- 
-    .booking-section {
-      padding-left: 8px !important;  /* ~1mm */
-      padding-right: 8px !important; /* ~1mm */
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      width: 100% !important;
-    }
-  
-    .booking-card {
-      width: 100% !important;
-      max-width: none !important;
-      margin: 0 !important;
-    }
-  }
-  
+
 /*most probably tablet/*   ---------------------------------------------------------------------------------*/
 
 @media (max-width: 480px) {
