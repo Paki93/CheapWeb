@@ -857,3 +857,128 @@ button:hover {
         transform: translateY(-50%);
     }
 }
+/* =========================
+   Cookie Banner (White + Square + Mobile Friendly)
+   ========================= */
+   .cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    z-index: 9999;
+    padding: 0 16px;
+  }
+  
+  .cookie-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;             /* white background */
+    color: #111;
+    border: 1px solid #000;          /* strong professional border */
+    border-radius: 0;                /* 90° corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 16px 18px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .cookie-text h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .cookie-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #222;
+  }
+  
+  .cookie-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  
+  /* Buttons – fully squared */
+  .cookie-btn {
+    border: 1px solid #000;
+    padding: 10px 16px;
+    border-radius: 0;                /* 90° corners */
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+    min-width: 120px;
+  }
+  
+  /* No animation scaling (more corporate look) */
+  .cookie-btn:active {
+    opacity: 0.9;
+  }
+  
+  .cookie-btn--light {
+    background: #ffffff;             /* white */
+    color: #000;
+  }
+  
+  .cookie-btn--dark {
+    background: #000000;             /* black */
+    color: #ffffff;
+  }
+  
+  /* Hover effects (desktop only) */
+  @media (hover: hover) {
+    .cookie-btn--light:hover {
+      background: #f2f2f2;
+    }
+  
+    .cookie-btn--dark:hover {
+      background: #222;
+    }
+  }
+  
+  .cookie-hidden {
+    display: none !important;
+  }
+  
+  /* =========================
+     Mobile Layout
+     ========================= */
+  @media (max-width: 640px) {
+    .cookie-banner {
+      bottom: 0;
+      padding: 10px;
+    }
+  
+    .cookie-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+      padding: 14px;
+    }
+  
+    .cookie-text h3 {
+      font-size: 15px;
+    }
+  
+    .cookie-text p {
+      font-size: 13.5px;
+    }
+  
+    .cookie-actions {
+      width: 100%;
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .cookie-btn {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+  
