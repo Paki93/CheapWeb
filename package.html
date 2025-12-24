@@ -31,22 +31,27 @@
         <div class="payment-intro">
           <h2>Get Started with Your Website in 3 Simple Steps</h2>
         </div>
-    
-        <div class="container">
-          <div class="step-box1">
-            <strong>Step 1:</strong> Choose your <strong> Plan</strong>.
-          </div>
-          <div class="step-box2">
-            <strong>Step 2:</strong> Choose your <strong> Domain Name</strong>.
-          </div>
-          <div class="step-box3">
-            <strong>Step 3:</strong> Choose your <strong> Hosting</strong>.
-          </div>
-        </div>
-        <div class="payment-intro2">
-        <h2>Step 1: Choose your Plan</h2>
-      </div>
-      
+            <!-- 3 steps, mooving  -->
+            <div class="container steps-container">
+
+              <a href="#payment-intro2" class="step-box step-box1">
+                <strong>Step 1:</strong> Choose your <strong>Plan</strong>.
+              </a>
+            
+              <a href="domain.html" class="step-box step-box2">
+                <strong>Step 2:</strong> Choose your <strong>Domain Name</strong>.
+              </a>
+            
+              <a href="hosting.html" class="step-box step-box3">
+                <strong>Step 3:</strong> Choose your <strong>Hosting</strong>.
+              </a>
+            
+            </div>
+            
+            <div class="payment-intro2" id="payment-intro2">
+              <h2>Step 1: Choose your Plan</h2>
+            </div>
+            
      <!--payment--> 
         <div class="payment-options">
           <div class="payment-card">
@@ -227,7 +232,65 @@
 .payment-section .step-box3:last-child {
   margin-bottom: 60px; /* adjust value as needed */
 }
+/* Make hover-style lift work on mobile (tap + focus) */
+.payment-card,
+.step-box1,
+.step-box2,
+.step-box3 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
 
+/* Make step boxes behave like buttons/links */
+.step-box {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Hover + tap animation */
+.step-box:hover,
+.step-box:active,
+.step-box:focus {
+  transform: translateY(-5px);
+}
+
+
+/* Desktop hover stays the same */
+.payment-card:hover,
+.step-box1:hover,
+.step-box2:hover,
+.step-box3:hover {
+  transform: translateY(-5px);
+}
+
+/* Mobile/tablet: tap (active) + keyboard focus */
+@media (hover: none) and (pointer: coarse) {
+  .payment-card:active,
+  .step-box1:active,
+  .step-box2:active,
+  .step-box3:active {
+    transform: translateY(-5px);
+  }
+
+  /* If the element (or something inside it) gets focus, lift it */
+  .payment-card:focus-within,
+  .step-box1:focus-within,
+  .step-box2:focus-within,
+  .step-box3:focus-within {
+    transform: translateY(-5px);
+  }
+}
+
+/* Optional: nicer focus ring when tapped/keyboard focused */
+.payment-card:focus-visible,
+.step-box1:focus-visible,
+.step-box2:focus-visible,
+.step-box3:focus-visible {
+  outline: 2px solid rgba(37, 153, 221, 0.35);
+  outline-offset: 4px;
+}
 
     </style>
    <!-- footer -->
@@ -238,3 +301,4 @@
       <script src="components/footer.js"></script>
   </body>
 </html>
+    
