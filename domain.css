@@ -1,0 +1,550 @@
+/* ===========================
+   NAVIGATION STYLES
+   =========================== */
+   nav {
+
+    background: #122c53;
+    /* Dark blue background for the navigation bar */
+    color: #fff;
+    /* Default text color is white */
+    padding: 15px 0;
+    padding-top: 5px;
+    /* Vertical padding: 15px top and bottom, 0 left and right */
+
+}
+
+.nav-container {
+    display: flex;
+    /* Use Flexbox to arrange child elements */
+    justify-content: space-between;
+    /* Space between logo and links */
+    align-items: center;
+    /* Vertically align items in the center */
+}
+
+.logo a {
+    font-weight: 700;
+    /* Bold text for logo */
+    font-size: 1.5 rem;
+    /* Font size of 1.5 rem */
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    /* Display links horizontally */
+    list-style: none;
+    /* Remove bullet points from list */
+    gap: 25px;
+    /* Space of 25px between each link */
+}
+
+/* Link default color */
+.nav-links a {
+    color: #ffffff;
+    /* White text for navigation links */
+    text-decoration: none;
+    /* Remove underline from links */
+    font-weight: 500;
+    /* Medium font weight */
+}
+
+/* Link hover color */
+.nav-links a:hover {
+    color: #2599dd;
+    /* Light blue color when hovered */
+}
+
+/* Active link styling */
+.nav-links a.active {
+    background: #28a745;
+    /* Green background for active link */
+    color: white;
+    /* Text color white */
+    padding: 8px 16px;
+    /* Add padding inside active link */
+    border-radius: 50px;
+    /* Rounded corners */
+    font-weight: bold;
+    /* Bold text */
+    transition: background 0.3s ease;
+    /* Smooth transition when background changes */
+}
+
+.nav-links a.active:hover {
+    background: #218838;
+    /* Darker green on hover */
+}
+
+/* ========= Base ========= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f5f7fb;
+  color: #111111;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ========= Containers ========= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* ========= Buttons ========= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: #d0d4e3;
+  color: #122c53;
+}
+
+.btn-ghost:hover {
+  background: #eef1fb;
+}
+
+/* ========= Hero ========= */
+
+.domain-hero {
+  background: radial-gradient(circle at top left, #4f46e5 0, #122c53 55%, #050816 100%);
+  color: white;
+  padding: 60px 0 70px;
+}
+
+.domain-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+
+.domain-hero h1 {
+  font-size: 2.3rem;
+  margin: 0 0 14px;
+}
+
+.domain-hero .subtitle {
+  max-width: 520px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #e5e7ff;
+  margin-bottom: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.domain-hero-card {
+  background: rgba(11, 15, 35, 0.92);
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+.domain-hero-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.domain-hero-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #f1f3ff;
+}
+
+.domain-hero-card li + li {
+  margin-top: 4px;
+}
+
+.domain-hero-card .hint {
+  font-size: 0.86rem;
+  color: #c7caf8;
+}
+
+/* ========= Page / Sections ========= */
+
+.page {
+  padding: 40px 0 60px;
+  background: linear-gradient(to bottom, #f5f7fb 0%, #eef2f8 100%);
+}
+
+.domain-section {
+  padding: 40px 0;
+}
+
+.domain-section h2 {
+  font-size: 1.7rem;
+  color: #122c53;
+  margin-bottom: 10px;
+}
+
+.domain-section p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #333542;
+  max-width: 760px;
+}
+
+/* Alternate background */
+.domain-section.domain-alt {
+  background: #ffffff;
+}
+
+/* ========= Domain Anatomy ========= */
+
+.domain-anatomy {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.anatomy-part {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  border: 1px solid #dfe3f1;
+}
+
+.anatomy-part .label {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.anatomy-part .value {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  margin: 4px 0 6px;
+  color: #111827;
+}
+
+.anatomy-part p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+/* ========= TLD Grid ========= */
+
+.tld-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.tld-card {
+  background: #f8f9ff;
+  border-radius: 16px;
+  border: 1px solid #dde1f2;
+  padding: 18px 18px 14px;
+}
+
+.tld-card h3 {
+  margin: 0 0 8px;
+  color: #111827;
+}
+
+.tld-card p {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.tld-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* ========= Checklist ========= */
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.checklist-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  border: 1px solid #e1e4f0;
+}
+
+.checklist-item h3 {
+  margin: 0 0 8px;
+  color: #122c53;
+  font-size: 1.02rem;
+}
+
+.checklist-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* ========= FAQ ========= */
+
+.faq-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faq-item {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 16px 18px 14px;
+  border: 1px solid #e1e5f0;
+}
+
+.faq-item h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* ========= Steps / Navigation ========= */
+
+.steps-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.step-link {
+  flex: 1;
+  min-width: 190px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.step-box {
+  padding: 16px 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #d6d9e8;
+  text-align: center;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease, border-color 0.18s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.15);
+  background: #f8f9ff;
+}
+
+.step-box.active {
+  background: #122c53;
+  color: #ffffff;
+  border-color: #122c53;
+}
+
+.step-cta {
+  margin-top: 18px;
+}
+
+/* ========= Call Button ========= */
+
+.call-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #1ed760, #16b455);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(30, 215, 96, 0.35);
+  z-index: 1000;
+}
+
+.call-btn:hover {
+  background: linear-gradient(135deg, #16b455, #0f8f43);
+}
+
+/* ========= Footer ========= */
+
+footer {
+  background: #122c53;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* ========= Responsive ========= */
+/* phone ---------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+
+
+  /* Stack nav items vertically */
+  .nav-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .logo {
+      font-size: 1.3rem;
+  }
+
+  .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+  }
+
+  .nav-links a {
+      font-size: 0.95rem;
+      padding: 6px 10px;
+  }
+
+  nav {
+      position: relative;
+      z-index: 999;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a {
+      font-size: 0.9rem;
+      padding: 5px 8px;
+  }
+
+  .logo {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .domain-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .domain-hero-card {
+    margin-top: 10px;
+  }
+
+  .domain-anatomy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tld-grid,
+  .checklist-grid,
+  .faq-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+
+  .domain-hero {
+    padding: 40px 0 50px;
+  }
+
+  .domain-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .domain-anatomy,
+  .tld-grid,
+  .checklist-grid,
+  .faq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .steps-container {
+    flex-direction: column;
+  }
+
+  .call-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.88rem;
+  }
+}
