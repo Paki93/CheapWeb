@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hosting | CheapWeb</title>
+    <meta
+      name="description"
+      content="Hosting explained + recommended hosting providers and CheapWeb managed hosting plan for £9.99/month."
+    />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Page-only styles (stronger green + whiter background + styled nav/footer) -->
+    <style>
+      :root {
+        /* Strong green palette */
+        --g-950: #052e1b;
+        --g-900: #064e3b;
+        --g-800: #0b5d3a;
+        --g-700: #0f7a3f;
+        --g-650: #128a43;
+        --g-600: #16a34a; /* primary */
+        --g-500: #22c55e;
+        --g-200: #bbf7d0;
+        --g-100: #dcfce7;
+        --g-50: #f0fdf4;
+
+        /* Neutral */
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: rgba(6, 95, 70, 0.16);
+
+        /* UI */
+        --radius: 18px;
+        --shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+        --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.07);
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        color: var(--ink);
+        background: #ffffff; /* more white */
+      }
+
+      /* fallback container if your global .container isn't defined */
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
+
+      /* Smooth anchor scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* =========================
+         NAV (strong green)
+         ========================= */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: linear-gradient(135deg, var(--g-900), var(--g-650));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 10px 24px rgba(6, 95, 70, 0.25);
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 14px;
+      }
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 900;
+        letter-spacing: 0.2px;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.92);
+        text-decoration: none;
+        font-weight: 800;
+        padding: 10px 12px;
+        border-radius: 12px;
+        transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+      }
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.14);
+        transform: translateY(-1px);
+        color: #fff;
+      }
+      .nav-links a.active {
+        background: rgba(255, 255, 255, 0.22);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1) inset;
+      }
+
+      /* =========================
+         PAGE BACKDROP (white + subtle green accents)
+         ========================= */
+      .page-wrap {
+        background: radial-gradient(
+            900px 420px at 18% 0%,
+            rgba(34, 197, 94, 0.1),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 420px at 82% 10%,
+            rgba(34, 197, 94, 0.08),
+            transparent 55%
+          ),
+          #fff;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 62px 0 22px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(34, 197, 94, 0.14);
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        color: var(--g-950);
+        font-weight: 900;
+        font-size: 0.92rem;
+      }
+      .hero h2 {
+        margin: 14px 0 10px;
+        font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+        line-height: 1.08;
+        color: var(--g-950);
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 1.05rem;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 1000;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+        border: 1px solid transparent;
+        user-select: none;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--g-800), var(--g-600));
+        color: #fff;
+        box-shadow: 0 14px 28px rgba(22, 163, 74, 0.22);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(22, 163, 74, 0.26);
+      }
+      .btn-secondary {
+        background: #fff;
+        color: var(--g-950);
+        border-color: rgba(6, 95, 70, 0.22);
+      }
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
+      }
+
+      /* RIGHT SUMMARY */
+      .summary {
+        display: grid;
+        gap: 12px;
+      }
+      .pill {
+        background: #ffffff;
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        border-radius: 16px;
+        padding: 14px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+      }
+      .pill strong {
+        display: block;
+        color: var(--g-950);
+        font-size: 1rem;
+        margin-bottom: 4px;
+        font-weight: 1000;
+      }
+      .pill span {
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 0.98rem;
+      }
+
+      /* SECTION HEADINGS */
+      .section {
+        padding: 28px 0;
+      }
+      .section h3 {
+        margin: 0 0 10px;
+        font-size: 1.6rem;
+        color: var(--g-950);
+        text-align: center;
+      }
+      .section .sub {
+        text-align: center;
+        color: var(--muted);
+        margin: 0 auto 18px;
+        max-width: 820px;
+        line-height: 1.75;
+      }
+
+      /* EXPLAIN GRID */
+      .explain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .info {
+        background: #fff;
+        border: 1px solid rgba(6, 95, 70, 0.18);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+      }
+      .icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        font-weight: 1000;
+        color: #fff;
+        background: linear-gradient(135deg, var(--g-800), var(--g-600));
+        box-shadow: 0 10px 20px rgba(22, 163, 74, 0.22);
+        margin-bottom: 10px;
+      }
+      .info h4 {
+        margin: 0 0 8px;
+        color: var(--g-950);
+        font-size: 1.1rem;
+        font-weight: 1000;
+      }
+      .info p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* PROVIDERS */
+      .providers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .provider {
+        background: #fff;
+        border: 1px solid rgba(6, 95, 70, 0.18);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        display: grid;
+        gap: 10px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .provider:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-soft);
+      }
+      .provider .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .provider .name {
+        font-weight: 1000;
+        color: var(--g-950);
+        font-size: 1.05rem;
+      }
+      .tag {
+        font-size: 0.85rem;
+        font-weight: 1000;
+        color: var(--g-900);
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        padding: 6px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .provider p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .provider a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 11px 12px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 1000;
+        color: #fff;
+        background: linear-gradient(135deg, var(--g-800), var(--g-600));
+        box-shadow: 0 12px 22px rgba(22, 163, 74, 0.18);
+      }
+      .provider a:hover {
+        background: linear-gradient(135deg, var(--g-900), var(--g-600));
+        transform: translateY(-1px);
+      }
+
+      /* OUR PLAN */
+      .ourplan-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        align-items: stretch;
+      }
+      .ourplan {
+        background: linear-gradient(180deg, rgba(34, 197, 94, 0.1), #fff);
+        border: 2px solid rgba(22, 163, 74, 0.35);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 10px 0 14px;
+      }
+      .price .amount {
+        font-size: 2.4rem;
+        font-weight: 1000;
+        color: var(--g-800);
+      }
+      .price .per {
+        color: var(--muted);
+        font-weight: 900;
+      }
+      .list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+        display: grid;
+        gap: 10px;
+      }
+      .list li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        line-height: 1.6;
+        color: var(--ink);
+      }
+      .check {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        background: rgba(34, 197, 94, 0.18);
+        border: 1px solid rgba(22, 163, 74, 0.25);
+        display: inline-grid;
+        place-items: center;
+        font-weight: 1000;
+        color: var(--g-800);
+        flex: 0 0 20px;
+        margin-top: 2px;
+      }
+
+      /* NOTICE */
+      .notice {
+        background: #ffffff;
+        border: 1px dashed rgba(22, 163, 74, 0.55);
+        border-radius: var(--radius);
+        padding: 16px;
+        color: var(--g-950);
+        line-height: 1.7;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+      }
+      .notice strong {
+        color: var(--g-950);
+        font-weight: 1000;
+      }
+
+      /* =========================
+         FOOTER (strong green)
+         ========================= */
+      footer {
+        margin-top: 22px;
+        background: linear-gradient(135deg, var(--g-950), var(--g-800));
+        color: rgba(255, 255, 255, 0.92);
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 -10px 24px rgba(6, 95, 70, 0.22);
+      }
+      footer .footer-inner {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+      }
+      footer p {
+        margin: 0;
+        font-weight: 800;
+      }
+
+      /* MOBILE */
+      @media (max-width: 900px) {
+        .hero {
+          padding: 52px 0 18px;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .explain-grid {
+          grid-template-columns: 1fr;
+        }
+        .providers {
+          grid-template-columns: 1fr;
+        }
+        .ourplan-wrap {
+          grid-template-columns: 1fr;
+        }
+        .btn {
+          width: 100%;
+        }
+        .provider a {
+          width: 100%;
+        }
+        .nav-container {
+          padding: 12px 0;
+        }
+        .nav-links {
+          gap: 8px;
+        }
+        .nav-links a {
+          padding: 9px 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION (same structure, stronger green styling applied above) -->
+    <nav>
+      <div class="container nav-container">
+        <h1 class="logo">
+          <a href="index.html">CheapWeb</a>
+        </h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home </a></li>
+          <li><a href="package.html">Plan </a></li>
+          <li><a href="domain.html">Domain name</a></li>
+          <li><a href="hosting.html" class="active">Hosting</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-wrap">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="container hero-grid">
+          <section class="card">
+            <span class="badge"
+              >✅ Hosting explained • Simple • Strong green</span
+            >
+            <h2>Hosting, explained without the tech stress.</h2>
+            <p>
+              Hosting is where your website “lives” online. When someone types
+              your domain name, the hosting provider delivers your site to their
+              device.
+              <br /><br />
+              You can choose your own host (links below), or use our
+              <strong>CheapWeb Managed Hosting</strong> — we set it up and keep
+              it running.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#our-hosting"
+                >Our plan: £9.99/month</a
+              >
+              <a class="btn btn-secondary" href="#providers"
+                >Recommended hosts</a
+              >
+            </div>
+          </section>
+
+          <aside class="card summary" aria-label="Quick summary">
+            <div class="pill">
+              <strong>Domain name</strong>
+              <span>Your address (example: cheapweb.uk)</span>
+            </div>
+            <div class="pill">
+              <strong>Hosting</strong>
+              <span>The home where your website files are stored</span>
+            </div>
+            <div class="pill">
+              <strong>Website</strong>
+              <span>The pages + images visitors see</span>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <!-- EXPLANATION -->
+      <section class="section">
+        <div class="container">
+          <h3>Hosting in 60 seconds</h3>
+          <p class="sub">Three steps — that’s it.</p>
+
+          <div class="explain-grid">
+            <div class="info">
+              <div class="icon">1</div>
+              <h4>You buy a domain</h4>
+              <p>
+                Your domain is the name people type to find you (e.g.
+                <em>yourbusiness.co.uk</em>).
+              </p>
+            </div>
+            <div class="info">
+              <div class="icon">2</div>
+              <h4>You connect it to hosting</h4>
+              <p>
+                Hosting stores your website and loads it fast. You connect
+                domain → hosting using DNS.
+              </p>
+            </div>
+            <div class="info">
+              <div class="icon">3</div>
+              <h4>Your site goes live</h4>
+              <p>
+                Once connected, your site is online for everyone —
+                mobile-friendly and secure (HTTPS).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROVIDERS -->
+      <section class="section" id="providers">
+        <div class="container">
+          <h3>Recommended hosting providers</h3>
+          <p class="sub">
+            Want to host it yourself? Choose a provider below. We can still help
+            you connect your domain. (Opens in a new tab.)
+          </p>
+
+          <div class="providers">
+            <article class="provider">
+              <div class="top">
+                <div class="name">Hostinger</div>
+                <div class="tag">Great value</div>
+              </div>
+              <p>
+                Affordable plans with an easy dashboard — ideal for beginners.
+              </p>
+              <a
+                href="https://www.hostinger.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Hostinger →
+              </a>
+            </article>
+
+            <article class="provider">
+              <div class="top">
+                <div class="name">SiteGround</div>
+                <div class="tag">Reliable</div>
+              </div>
+              <p>
+                Strong performance and support — great for business websites.
+              </p>
+              <a
+                href="https://www.siteground.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit SiteGround →
+              </a>
+            </article>
+
+            <article class="provider">
+              <div class="top">
+                <div class="name">IONOS</div>
+                <div class="tag">UK-friendly</div>
+              </div>
+              <p>
+                Simple domain + hosting bundles, good for small business basics.
+              </p>
+              <a
+                href="https://www.ionos.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit IONOS →
+              </a>
+            </article>
+
+            <article class="provider">
+              <div class="top">
+                <div class="name">Bluehost</div>
+                <div class="tag">Simple</div>
+              </div>
+              <p>
+                Guided setup and beginner-friendly tools for quick launches.
+              </p>
+              <a
+                href="https://www.bluehost.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Bluehost →
+              </a>
+            </article>
+
+            <article class="provider">
+              <div class="top">
+                <div class="name">Cloudflare Pages</div>
+                <div class="tag">Fast</div>
+              </div>
+              <p>
+                Modern hosting for fast sites — best if you like a more
+                technical setup.
+              </p>
+              <a
+                href="https://pages.cloudflare.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Cloudflare Pages →
+              </a>
+            </article>
+
+            <article class="provider">
+              <div class="top">
+                <div class="name">Netlify</div>
+                <div class="tag">Modern</div>
+              </div>
+              <p>
+                Great workflow for modern websites — easy deployment options.
+              </p>
+              <a
+                href="https://www.netlify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Netlify →
+              </a>
+            </article>
+          </div>
+
+          <div class="notice" style="margin-top: 16px">
+            <strong>Tip:</strong> If you choose a host above, you can still use
+            CheapWeb. Tell us which host you picked and we’ll guide you through
+            connecting your domain.
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR PLAN -->
+      <section class="section" id="our-hosting">
+        <div class="container">
+          <h3>CheapWeb Managed Hosting — £9.99/month</h3>
+          <p class="sub">
+            The easiest option: we host it, connect it, and keep it stable.
+          </p>
+
+          <div class="ourplan-wrap">
+            <div class="ourplan">
+              <span class="badge">🌿 Our easiest option</span>
+              <h4
+                style="
+                  margin: 12px 0 0;
+                  color: var(--g-950);
+                  font-size: 1.25rem;
+                  font-weight: 1000;
+                "
+              >
+                Managed Hosting + Setup
+              </h4>
+
+              <div class="price">
+                <span class="amount">£9.99</span>
+                <span class="per">/ month</span>
+              </div>
+
+              <ul class="list">
+                <li>
+                  <span class="check">✓</span> Hosting setup + connection help
+                </li>
+                <li><span class="check">✓</span> Free SSL (secure HTTPS)</li>
+                <li><span class="check">✓</span> Backups + quick restore</li>
+                <li>
+                  <span class="check">✓</span> Speed optimization for mobile
+                </li>
+                <li><span class="check">✓</span> Basic security protection</li>
+                <li>
+                  <span class="check">✓</span> Support if something breaks
+                </li>
+              </ul>
+
+              <a
+                class="btn btn-primary"
+                href="package.html"
+                style="width: 100%"
+              >
+                Continue to Plan →
+              </a>
+            </div>
+
+            <div class="card">
+              <h4
+                style="
+                  margin: 0 0 10px;
+                  color: var(--g-950);
+                  font-size: 1.25rem;
+                  font-weight: 1000;
+                "
+              >
+                Quick guidance
+              </h4>
+
+              <div class="pill" style="margin-bottom: 10px">
+                <strong>Choose a 3rd-party host</strong>
+                <span
+                  >If you want to compare offers and manage it yourself.</span
+                >
+              </div>
+
+              <div class="pill" style="margin-bottom: 10px">
+                <strong>Choose CheapWeb hosting</strong>
+                <span>If you want the simplest option with help included.</span>
+              </div>
+
+              <div class="notice">
+                <strong>Good to know:</strong> Hosting is separate from your
+                domain. If you already bought a domain, we can connect it to
+                either option. <br /><br />
+                Need help choosing? Start with our plan and we’ll advise you
+                during setup.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- footer component -->
+    <site-footer></site-footer>
+
+    <!-- Strong green footer (keeps your structure; styles applied above) -->
+    <footer>
+      <div class="footer-inner">
+        <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="components/footer.js"></script>
+  </body>
+</html>
