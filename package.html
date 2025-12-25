@@ -327,6 +327,32 @@
   outline: 2px solid rgba(37, 153, 221, 0.35);
   outline-offset: 4px;
 }
+/* ADD THIS (mobile step-box centering + side padding) */
+@media (max-width: 768px) {
+  /* Your rule .payment-section .container aligns everything to the left.
+     Override ONLY for the steps container */
+  .steps-container {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;          /* center the whole steps block */
+    padding: 0 14px;         /* space from left/right edges */
+    box-sizing: border-box;
+    align-items: center;     /* center items inside */
+  }
+
+  /* Make each step box not touch the screen edge */
+  .steps-container .step-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Optional: allow text to wrap nicely on small screens */
+  .step-box1,
+  .step-box2,
+  .step-box3 {
+    flex-wrap: wrap;
+  }
+}
 
     </style>
    <!-- footer -->
