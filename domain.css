@@ -139,11 +139,12 @@ img {
 .btn-ghost {
   background: transparent;
   border-color: #d0d4e3;
-  color: #122c53;
+  color: #d0d4e3;
 }
 
 .btn-ghost:hover {
   background: #eef1fb;
+  color: black;
 }
 
 /* ========= Hero ========= */
