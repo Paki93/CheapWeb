@@ -1,3 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheapWeb - Secure Payment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="container nav-container">
+        <div class="container nav-container">
+          <h1 class="logo">
+            <a href="index.html">CheapWeb</a>
+          </h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="package.html" class="active">Packages</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+    <!-- Payment Section -->
+    <section class="payment-section">
+      <div class="container">
+        <!-- Catchy Headline -->
+        <div class="payment-intro">
+          <h2>Get Started with Your Website in 3 Simple Steps</h2>
+        </div>
+            <!-- 3 steps, mooving  -->
+            <div class="container steps-container">
+
+              <a href="#payment-intro2" class="step-box step-box1">
+                <strong>Step 1:</strong> Choose your <strong>Plan</strong>.
+              </a>
+            
+              <a href="domain.html" class="step-box step-box2">
+                <strong>Step 2:</strong> Choose your <strong>Domain Name</strong>.
+              </a>
+            
+              <a href="hosting.html" class="step-box step-box3">
+                <strong>Step 3:</strong> Choose your <strong>Hosting</strong>.
+              </a>
+            
+            </div>
+            
+            <div class="payment-intro2" id="payment-intro2">
+              <h2>Step 1: Choose your Plan</h2>
+            </div>
+            
+     <!--payment--> 
+        <div class="payment-options">
+          <div class="payment-card">
+            <h3>Personal Website</h3>
+            <p>Perfect for students or individual.</p>
+            <p class="price">£29/month</p>
+    <!--detail-btn-->
+          <a href="personal.html" class="detail-btn">See Details</a>
+           <!--payment-btn--> 
+          <a 
+              href="https://buy.stripe.com/bJe00k3op6Ugd3Rg6K83C01"
+              target="_blank"
+              class="btn-pay"
+              >Subscribe £29</a
+            >
+          </div>
+
+          <div class="payment-card">
+            <h3>Business Bronze</h3>
+            <p>Perfect for small business.</p>
+            <p class="price">£49/month</p>
+            <a href="bronze.html" class="detail-btn">See Details</a>
+            <a
+              href="https://buy.stripe.com/aFa3cw3opceA3th3jY83C00"
+              target="_blank"
+              class="btn-pay"
+              >Subscribe £49</a
+            >
+          </div>
+
+          <div class="payment-card">
+            <h3>Business Silver</h3>
+            <p>Custom design tailored to your brand with advanced futures.</p>
+            <p class="price">£99/month</p>
+            <a href="silver.html" class="detail-btn">See Details</a>
+            <a
+              href="https://buy.stripe.com/4gM28s3op7YkaVJg6K83C02"
+              target="_blank"
+              class="btn-pay"
+              >Subscribe £99</a
+            >
+          </div>
+          
+          <div class="payment-card">
+            <h3>Business Gold</h3>
+            <p>Powerful systems with smart software integration.</p>
+            <p class="price">£149/month</p>
+            <a href="gold.html" class="detail-btn">See Details</a>
+            <a
+              href="https://buy.stripe.com/5kQbJ22klceA7Jx3jY83C03"
+              target="_blank"
+              class="btn-pay"
+              >Subscribe £149</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="step-cta">
+        <a href="domain.html" class="btn btn-primary">
+          Next step: Domain name →
+        </a>
+      </div>
+    </section>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        color: #122c53;
+      }
+      .payment-section {
+        padding: 80px 20px;
+        text-align: center;
+      }
+      .payment-options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .payment-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        transition: transform 0.2s;
+      }
+      .payment-card:hover {
+        transform: translateY(-5px);
+      }
+      .price {
+        font-size: 1.5rem;
+        color: #2599dd;
+        font-weight: bold;
+      }
+      .btn-pay {
+        display: inline-block;
+        margin-top: 15px;
+        background: #122c53;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .btn-pay:hover {
+        background: #2599dd;
+      }
+ 
+      /* payment steps*/
+
+  .payment-section .container {
+    display: flex;
+    flex-direction: column; /* stack boxes vertically */
+    align-items: flex-start; /* align to the left */
+    gap: 15px;
+    max-width: 400px;       /* optional width for the box stack */
+    margin: 0 auto;
+  }
+  
+  .payment-intro h2 {
+    color:#122c53;
+    margin-right: 40px;
+  }
+
+  .payment-intro2 h2 {
+    color:#2599dd;
+   margin-left: 20px
+  }
+  .step-box1 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid #2599dd; /* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box2 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid #4f46e5;/* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box3 {
+    background-color: #f3f4f6; /* light gray box */
+    padding: 15px 20px;
+    border-left: 5px solid green; /* accent on left */
+    border-radius: 8px;
+    display: flex;         /* keep step number and text on same line */
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .step-box1 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: #2599dd;        /* step number color */
+  }
+  .step-box2 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: #4f46e5;         /* step number color */
+  }
+  .step-box3 strong {
+    margin-right: 8px;    
+    margin-left: 4px;    /* space between "Step X:" and comment */
+    color: green;         /* step number color */
+  }
+
+   /* purple button start */
+  .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease, border-color 0.15s ease;
+}
+
+  .step-cta {
+  margin-top: 48px;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.4);
+}
+ /* purple button finish */
+
+  /* Add extra space after the last step */
+.payment-section .step-box3:last-child {
+  margin-bottom: 60px; /* adjust value as needed */
+}
+/* Make hover-style lift work on mobile (tap + focus) */
+.payment-card,
+.step-box1,
+.step-box2,
+.step-box3 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Make step boxes behave like buttons/links */
+.step-box {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Hover + tap animation */
+.step-box:hover,
+.step-box:active,
+.step-box:focus {
+  transform: translateY(-5px);
+}
+
+
+/* Desktop hover stays the same */
+.payment-card:hover,
+.step-box1:hover,
+.step-box2:hover,
+.step-box3:hover {
+  transform: translateY(-5px);
+}
+
+/* Mobile/tablet: tap (active) + keyboard focus */
+@media (hover: none) and (pointer: coarse) {
+  .payment-card:active,
+  .step-box1:active,
+  .step-box2:active,
+  .step-box3:active {
+    transform: translateY(-5px);
+  }
+
+  /* If the element (or something inside it) gets focus, lift it */
+  .payment-card:focus-within,
+  .step-box1:focus-within,
+  .step-box2:focus-within,
+  .step-box3:focus-within {
+    transform: translateY(-5px);
+  }
+}
+
+/* Optional: nicer focus ring when tapped/keyboard focused */
+.payment-card:focus-visible,
+.step-box1:focus-visible,
+.step-box2:focus-visible,
+.step-box3:focus-visible {
+  outline: 2px solid rgba(37, 153, 221, 0.35);
+  outline-offset: 4px;
+}
 @media (max-width: 768px) {
   .payment-section {
     padding: 48px 14px;
@@ -78,3 +407,14 @@
     font-size: 0.95rem;
   }
 }
+
+    </style>
+   <!-- footer -->
+   <site-footer></site-footer>
+   <footer>
+     <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+   </footer>
+      <script src="components/footer.js"></script>
+  </body>
+</html>
+    
