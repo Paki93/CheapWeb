@@ -3,300 +3,1029 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CheapWeb</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>CheapWeb | Affordable UK Business Websites</title>
+    <meta
+      name="description"
+      content="CheapWeb designs affordable, mobile-optimised business websites for UK companies. Choose a package, secure a domain, select hosting, and launch quickly with a free consultation."
+    />
+    <meta name="theme-color" content="#122c53" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- One-page home styling (dark blue only as primary) -->
+    <style>
+      :root {
+        --primary: #122c53; /* primary colour */
+        --primary-2: #0d2242; /* deeper shade */
+        --ink: #0b1220;
+        --muted: #475569;
+        --bg: #ffffff;
+        --bg-soft: #f6f8fc;
+        --card: #ffffff;
+        --border: rgba(15, 23, 42, 0.1);
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.1);
+        --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto,
+          Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(1120px, 92%);
+        margin: 0 auto;
+      }
+
+      /* =========================
+         NAV
+         ========================= */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 12px;
+      }
+      .logo a {
+        text-decoration: none;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+      .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-weight: 700;
+        color: var(--primary);
+        padding: 10px 12px;
+        border-radius: 12px;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+      .nav-links a:hover {
+        background: rgba(18, 44, 83, 0.08);
+        transform: translateY(-1px);
+      }
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 900;
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 12px 26px rgba(18, 44, 83, 0.22);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        white-space: nowrap;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 34px rgba(18, 44, 83, 0.28);
+      }
+
+      /* =========================
+         HERO
+         ========================= */
+      .hero {
+        padding: 64px 0 22px;
+        background: radial-gradient(
+            900px 480px at 15% 0%,
+            rgba(18, 44, 83, 0.1),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 480px at 85% 10%,
+            rgba(18, 44, 83, 0.06),
+            transparent 55%
+          ),
+          #fff;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+      .hero-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: calc(var(--radius) + 6px);
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(18, 44, 83, 0.1);
+        border: 1px solid rgba(18, 44, 83, 0.16);
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 0.92rem;
+      }
+      .hero h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.6px;
+        color: var(--primary);
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 1.05rem;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 900;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+        user-select: none;
+      }
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 14px 28px rgba(18, 44, 83, 0.22);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(18, 44, 83, 0.28);
+      }
+      .btn-secondary {
+        color: var(--primary);
+        background: #fff;
+        border-color: rgba(18, 44, 83, 0.22);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      }
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+      }
+
+      .proof-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .proof-pill {
+        background: rgba(18, 44, 83, 0.08);
+        border: 1px solid rgba(18, 44, 83, 0.14);
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-weight: 800;
+        color: var(--primary);
+        font-size: 0.92rem;
+      }
+
+      .hero-right {
+        display: grid;
+        gap: 12px;
+      }
+      .mini {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: var(--shadow-soft);
+      }
+      .mini strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--primary);
+        font-weight: 900;
+      }
+      .mini span {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* =========================
+         SECTION BASE
+         ========================= */
+      .section {
+        padding: 44px 0;
+      }
+      .section-title {
+        margin: 0 0 10px;
+        text-align: center;
+        font-size: 1.85rem;
+        color: var(--primary);
+        letter-spacing: -0.2px;
+      }
+      .section-sub {
+        margin: 0 auto 18px;
+        text-align: center;
+        max-width: 820px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      /* =========================
+         HOW IT WORKS
+         ========================= */
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .step-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .step-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+      }
+      .step-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .num {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        font-weight: 1000;
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 12px 22px rgba(18, 44, 83, 0.2);
+      }
+      .step-link {
+        text-decoration: none;
+        font-weight: 900;
+        color: var(--primary);
+        background: rgba(18, 44, 83, 0.08);
+        border: 1px solid rgba(18, 44, 83, 0.14);
+        padding: 8px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .step-card h3 {
+        margin: 0 0 8px;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+      .step-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* =========================
+         PACKAGES
+         ========================= */
+      .packages {
+        background: var(--bg-soft);
+        border-top: 1px solid rgba(15, 23, 42, 0.06);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .plan {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+        display: grid;
+        gap: 10px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .plan:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+      }
+      .plan.featured {
+        border: 2px solid rgba(18, 44, 83, 0.35);
+        box-shadow: 0 18px 50px rgba(18, 44, 83, 0.12);
+      }
+      .tag {
+        width: fit-content;
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 1000;
+        font-size: 0.85rem;
+        color: var(--primary);
+        background: rgba(18, 44, 83, 0.08);
+        border: 1px solid rgba(18, 44, 83, 0.14);
+      }
+      .plan h4 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 1.12rem;
+      }
+      .plan p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .amount {
+        font-size: 1.9rem;
+        font-weight: 1000;
+        color: var(--primary);
+      }
+      .per {
+        color: var(--muted);
+        font-weight: 900;
+      }
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+      .list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      .check {
+        width: 20px;
+        height: 20px;
+        border-radius: 7px;
+        display: inline-grid;
+        place-items: center;
+        font-weight: 1000;
+        color: #fff;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        flex: 0 0 20px;
+        margin-top: 2px;
+      }
+      .cta-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+      .btn-small {
+        padding: 10px 12px;
+        border-radius: 14px;
+        font-weight: 1000;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid transparent;
+        flex: 1 1 140px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+      }
+      .btn-outline {
+        background: #fff;
+        color: var(--primary);
+        border-color: rgba(18, 44, 83, 0.22);
+      }
+      .btn-outline:hover {
+        transform: translateY(-1px);
+      }
+      .btn-fill {
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #fff;
+        box-shadow: 0 14px 26px rgba(18, 44, 83, 0.18);
+      }
+      .btn-fill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 30px rgba(18, 44, 83, 0.22);
+      }
+
+      /* =========================
+         WHY US
+         ========================= */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .why {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+      }
+      .why strong {
+        display: block;
+        color: var(--primary);
+        font-weight: 1000;
+        margin-bottom: 6px;
+      }
+      .why p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* =========================
+         FAQ + CTA
+         ========================= */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        align-items: start;
+        margin-top: 18px;
+      }
+      .box {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+      }
+      details {
+        background: rgba(18, 44, 83, 0.04);
+        border: 1px solid rgba(18, 44, 83, 0.1);
+        border-radius: 16px;
+        padding: 14px;
+      }
+      details + details {
+        margin-top: 10px;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 1000;
+        color: var(--primary);
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .final-cta {
+        padding: 52px 0;
+        background: radial-gradient(
+            900px 420px at 20% 0%,
+            rgba(18, 44, 83, 0.12),
+            transparent 60%
+          ),
+          var(--bg);
+      }
+      .cta-box {
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #fff;
+        border-radius: calc(var(--radius) + 8px);
+        padding: 26px;
+        box-shadow: 0 26px 70px rgba(18, 44, 83, 0.26);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .cta-box h2 {
+        margin: 0 0 8px;
+        font-size: 1.9rem;
+      }
+      .cta-box p {
+        margin: 0;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .cta-actions {
+        display: grid;
+        gap: 10px;
+      }
+      .cta-actions a {
+        text-decoration: none;
+        font-weight: 1000;
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .cta-white {
+        background: #fff;
+        color: var(--primary);
+      }
+      .cta-ghost {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .cta-actions a:hover {
+        transform: translateY(-1px);
+      }
+
+      /* =========================
+         FOOTER (strong green)
+         ========================= */
+      footer {
+        margin-top: 22px;
+        background: #122c53;
+        color: rgba(255, 255, 255, 0.92);
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 -10px 24px rgba(6, 95, 70, 0.22);
+      }
+      footer .footer-inner {
+        padding: 18px 0;
+        display: flex;
+        justify-content: center;
+      }
+      footer p {
+        margin: 0;
+        font-weight: 800;
+      }
+
+      /* Sticky call button (optional) */
+      .call-btn {
+        position: fixed;
+        /* Fixed position */
+        bottom: 15px;
+        /* 15px from bottom */
+        right: 15px;
+        /* 15px from right */
+        background: #28a745;
+        /* Green background */
+        color: #fff;
+        /* White text */
+        padding: 1rem 1.5rem;
+        /* Padding */
+        border-radius: 50px;
+        /* Rounded pill shape */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Bold text */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        /* Shadow for 3D effect */
+        z-index: 1000;
+        /* Keep above other elements */
+      }
+
+      .call-btn:hover {
+        background: #218838;
+      }
+      /* =========================
+         RESPONSIVE
+         ========================= */
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-cta {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Navigation -->
+    <!-- NAV -->
     <nav>
       <div class="container nav-container">
-        <h1 class="logo">
-          <a href="index.html">CheapWeb</a>
-        </h1>
+        <h1 class="logo"><a href="#top">CheapWeb</a></h1>
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="package.html">Packages</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#why">Why CheapWeb</a></li>
+          <li><a href="#faq">FAQs</a></li>
         </ul>
+        <a class="nav-cta" href="package.html">Get Started →</a>
       </div>
     </nav>
 
-    <div class="video-background">
-      <video autoplay loop muted playsinline id="bg-video">
-        <source src="assets/images/dna.mp4" type="video/mp4" />
-      </video>
-
-      <!-- Video Content / Hero Section -->
-      <div class="video-content">
-        <h1>CheapWeb</h1>
-        <h2>UK n1 <strong>affordable websites</strong></h2>
-
-        <a href="package.html" class="buy-btn">Get Started</a>
-      </div>
-    </div>
-
-    <!--
-  <div class="small-video-container">
-    <video autoplay loop muted playsinline id="small-video">
-      <source src="bubbles.mp4" type="video/mp4" />
-    </video>
-  </div>
-
-
-    <div class="small-video-container top-left">
-      <video autoplay loop muted playsinline id="small-videoleft">
-        <source src="dna.mp4" type="video/mp4" />
-      </video>
-    </div>
-  -->
-
-    <nav class="cw-repeat-nav">
-      <div class="cw-scroll">
-        <span style="font-weight: 300; white-space: nowrap">
-          •••••••••• UK N1 AFFORDABLE WEBSITES • PERSONAL WEBSITE • BUSINESS
-          WEBSITE • CONTACT FORM • BOOKING SYSTEM • PAYMENT SERVICE • SEO
-          INTEGRATION • GOOGLE RATING PLAN • SOCIAL CONNECTION • PROFESSIONAL •
-          RELIABLE • FAST DELIVERY • FREE CONSULTATION •••••••••••
-        </span>
-      </div>
-    </nav>
-    <!-- <span>CheapWeb  • UK N1 AFFORDABLE WEBSITES •  CheapWeb  •  RELIABLE •  CheapWeb  •  PROFESSIONAL •  CheapWeb  •  FAST DELIVERY  •  CheapWeb  •  FREE CONSULTATION • </span>-->
-
-    <!-- <span>CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  •  CheapWeb  • </span>-->
-
-    <div class="page">
-      <!-- Service Categories Section -->
-      <section id="services">
-        <div class="container">
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">
-            Choose the right package for your business needs.
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <section class="hero-card">
+          <span class="badge">
+            UK-based websites • Mobile optimised • Cost-effective
+          </span>
+          <h1>
+            Professional business websites designed to convert visitors into
+            customers.
+          </h1>
+          <p>
+            CheapWeb delivers modern, high-performance websites for UK
+            businesses. Our clear packages and streamlined process ensure your
+            website builds trust, communicates value, and encourages enquiries.
           </p>
 
-          <!-- Standard -->
-          <div class="service-box">
-            <a href="personal.html">
-              <img
-                src="assets/images/student.jpeg"
-                alt="Standard Website Example"
-                class="service-img"
-              />
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="package.html">
+              Choose a Package →
             </a>
-            <div class="service-info">
-              <h3>PERSONAL WEBSITE</h3>
-              <p>
-                Idel for <strong><em>individual</em></strong> and
-                <strong><em>students</em></strong
-                >. We create your Personal Portfolio, CV and much more online.
-              </p>
-              <p class="price">
-                <del>£29</del> / <strong>£15 </strong>per month
-              </p>
-
-              <!-- Green rounded button -->
-              <a href="personal.html" class="more-btn">More</a>
-            </div>
+            <a class="btn btn-secondary" href="#packages">View Pricing</a>
           </div>
 
-          <!-- BUSINESS BRONZE -->
-          <div class="service-box reverse">
-            <a href="bronze.html">
-              <img
-                src="assets/images/basic.webp"
-                alt="Personalised Website Example"
-                class="service-img"
-              />
-            </a>
-            <div class="service-info">
-              <h3>BUSINESS BRONZE</h3>
-              <p>
-                Ideal for <strong><em>small businesses</em></strong> and
-                start-ups This one-page website is designed to turn visitors
-                into customers. Clean, fast, and highly effective.
-              </p>
-              <p class="price">
-                <del>£49</del> / <strong>£25 </strong>per month
-              </p>
+          <div class="proof-row" aria-label="Key benefits">
+            <span class="proof-pill">📱 Mobile-first design</span>
+            <span class="proof-pill">⚡ Fast performance</span>
+            <span class="proof-pill">🧭 Clear user journeys</span>
+            <span class="proof-pill">💬 Complimentary consultation</span>
+          </div>
+        </section>
 
-              <!-- Green rounded button -->
-              <a href="bronze.html" class="more-btn">More</a>
+        <aside class="hero-right" aria-label="Quick overview">
+          <div class="mini">
+            <strong>Ideal for</strong>
+            <span>
+              Local businesses, service providers, freelancers, and new
+              startups.
+            </span>
+          </div>
+          <div class="mini">
+            <strong>What’s included</strong>
+            <span>
+              A professional layout, mobile responsiveness, and
+              conversion-focused sections.
+            </span>
+          </div>
+          <div class="mini">
+            <strong>Launch process</strong>
+            <span>
+              Package selection → Domain → Hosting → Build → Review → Launch.
+            </span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">
+          A simple, proven approach. You choose the essentials — we deliver a
+          professional website built to support your business goals.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-top">
+              <div class="num">1</div>
+              <a class="step-link" href="package.html">Packages</a>
             </div>
+            <h3>Select your package</h3>
+            <p>
+              Choose the plan that best aligns with your business objectives and
+              required features.
+            </p>
           </div>
 
-          <!-- BUSINESS SILVER -->
-          <div class="service-box">
-            <a href="silver.html">
-              <img
-                src="assets/images/business.avif"
-                alt="High-Level Software Example"
-                class="service-img"
-              />
-            </a>
-            <div class="service-info">
-              <h3>BUSINESS SILVER</h3>
-              <p>
-                Ideal for <strong><em>medium-sized business</em></strong> A
-                looking to increase customers range by expanding their business
-                online. A three-page website offering powerful, scalable
-                solutions to support growth and visibility.
-              </p>
-              <p class="price">
-                <del>£99</del> / <strong>£49 </strong>per month
-              </p>
-
-              <!-- Green rounded button -->
-              <a href="silver.html" class="more-btn">More</a>
+          <div class="step-card">
+            <div class="step-top">
+              <div class="num">2</div>
+              <a class="step-link" href="domain.html">Domain</a>
             </div>
+            <h3>Choose your domain name</h3>
+            <p>
+              Your domain is your online address, such as yourbusiness.co.uk.
+            </p>
           </div>
 
-          <!-- BUSINESS GOLD -->
-          <div class="service-box reverse">
-            <a href="gold.html">
-              <img
-                src="assets/images/software2.jpeg"
-                alt="High-Level Software Example"
-                class="service-img"
-              />
-            </a>
-            <div class="service-info">
-              <h3>BUSINESS GOLD</h3>
+          <div class="step-card">
+            <div class="step-top">
+              <div class="num">3</div>
+              <a class="step-link" href="hosting.html">Hosting</a>
+            </div>
+            <h3>Select hosting</h3>
+            <p>
+              Use your preferred hosting provider or our managed option — we’ll
+              ensure everything is configured correctly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="section packages" id="packages">
+      <div class="container">
+        <h2 class="section-title">Website Packages</h2>
+        <p class="section-sub">
+          Straightforward options tailored to every stage of your business —
+          from simple to advanced.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="plan">
+            <span class="tag">Starter</span>
+            <h4>Personal Website</h4>
+            <p>Ideal for portfolios, CV websites, and personal branding.</p>
+            <div class="price">
+              <span class="amount">£29</span><span class="per">per month</span>
+            </div>
+            <ul class="list">
+              <li>
+                <span class="check">✓</span> Fully mobile-responsive design
+              </li>
+              <li><span class="check">✓</span> Contact and enquiry section</li>
+              <li><span class="check">✓</span> Quick setup and launch</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn-small btn-outline" href="personal.html"
+                >View details</a
+              >
+              <a class="btn-small btn-fill" href="package.html">Select →</a>
+            </div>
+          </article>
+
+          <article class="plan featured">
+            <span class="tag">Best Value</span>
+            <h4>Business Bronze</h4>
+            <p>A high-converting one-page website for small businesses.</p>
+            <div class="price">
+              <span class="amount">£49</span><span class="per">per month</span>
+            </div>
+            <ul class="list">
+              <li><span class="check">✓</span> Conversion-focused layout</li>
+              <li><span class="check">✓</span> Clear calls to action</li>
+              <li><span class="check">✓</span> Ongoing support included</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn-small btn-outline" href="bronze.html"
+                >View details</a
+              >
+              <a class="btn-small btn-fill" href="package.html">Select →</a>
+            </div>
+          </article>
+
+          <article class="plan">
+            <span class="tag">Growth</span>
+            <h4>Business Silver</h4>
+            <p>A multi-page website designed for growing businesses.</p>
+            <div class="price">
+              <span class="amount">£99</span><span class="per">per month</span>
+            </div>
+            <ul class="list">
+              <li><span class="check">✓</span> Strong credibility sections</li>
+              <li><span class="check">✓</span> Additional pages and content</li>
+              <li><span class="check">✓</span> Improved SEO structure</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn-small btn-outline" href="silver.html"
+                >View details</a
+              >
+              <a class="btn-small btn-fill" href="package.html">Select →</a>
+            </div>
+          </article>
+
+          <article class="plan">
+            <span class="tag">Professional</span>
+            <h4>Business Gold</h4>
+            <p>
+              An advanced website with custom functionality and integrations.
+            </p>
+            <div class="price">
+              <span class="amount">£149</span><span class="per">per month</span>
+            </div>
+            <ul class="list">
+              <li><span class="check">✓</span> Advanced integrations</li>
+              <li><span class="check">✓</span> Premium user experience</li>
+              <li><span class="check">✓</span> Priority support</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn-small btn-outline" href="gold.html">View details</a>
+              <a class="btn-small btn-fill" href="package.html">Select →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section" id="why">
+      <div class="container">
+        <h2 class="section-title">Why Choose CheapWeb</h2>
+        <p class="section-sub">
+          We focus on what drives business results: credibility, clarity, and a
+          website that encourages visitors to get in touch.
+        </p>
+
+        <div class="why-grid">
+          <div class="why">
+            <strong>Conversion-driven design</strong>
+            <p>
+              Structured layouts, clear messaging, and calls to action designed
+              to generate enquiries.
+            </p>
+          </div>
+          <div class="why">
+            <strong>Mobile-first approach</strong>
+            <p>
+              Your website will perform flawlessly on mobile devices, where most
+              users browse.
+            </p>
+          </div>
+          <div class="why">
+            <strong>Clear and simple process</strong>
+            <p>
+              Choose your package, domain, and hosting — we handle the rest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">
+          Clear answers to the questions we’re asked most often.
+        </p>
+
+        <div class="two-col">
+          <div class="box">
+            <h3 style="margin: 0 0 10px; color: var(--primary)">
+              General questions
+            </h3>
+
+            <details>
+              <summary>Do I need a domain name and hosting?</summary>
               <p>
-                Ideal for <strong><em> large business</em></strong> seeking a
-                strong and comprehensive online presence. A fully developed
-                website with up to five pages, designed to deliver advanced
-                functionality, scalability, and a fully customed brand
-                experience.
+                Yes. Your domain is your website address, and hosting is where
+                your website is stored online. If needed, we’ll guide you
+                through both.
               </p>
+            </details>
 
-              <p class="price">
-                <del>£149</del> / <strong>£75</strong> per month
+            <details>
+              <summary>Can I use an existing domain?</summary>
+              <p>
+                Absolutely. If you already own a domain, we’ll help connect it
+                to your new website.
               </p>
+            </details>
 
-              <!-- Green rounded button -->
-              <a href="gold.html" class="more-btn">More</a>
+            <details>
+              <summary>Will my website be mobile-friendly?</summary>
+              <p>
+                Yes. Every CheapWeb website is fully optimised for mobile,
+                tablet, and desktop devices.
+              </p>
+            </details>
+
+            <details>
+              <summary>How do I begin?</summary>
+              <p>
+                Simply choose a package and follow the steps. If you have any
+                questions, feel free to contact us.
+              </p>
+            </details>
+          </div>
+
+          <div class="box">
+            <h3 style="margin: 0 0 10px; color: var(--primary)">Next steps</h3>
+            <p style="margin: 0; color: var(--muted); line-height: 1.7">
+              Ready to move forward? Select your package and we’ll guide you
+              through the remaining steps.
+            </p>
+            <div style="display: grid; gap: 10px; margin-top: 14px">
+              <a
+                class="btn btn-primary"
+                href="package.html"
+                style="width: 100%"
+              >
+                Choose a Package →
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="feedback.html"
+                style="width: 100%"
+              >
+                Request a consultation
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Booking Form -->
-      <section class="booking-section">
-        <div class="booking-card">
-          <h1>Still have questions?</h1>
-          <h2>Book Your Free Consultation</h2>
-          <form id="booking-form">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="website-type">Website Type</label>
-              <select id="website-type" name="website-type" required>
-                <option value="">Select a website type</option>
-                <option value="standard">Personal Website</option>
-                <option value="personalised">Business Bronze</option>
-                <option value="high-level">Business Silver</option>
-                <option value="high-level">Business Gold</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="date">Preferred Date</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-
-            <div class="form-group">
-              <label for="time">Preferred Time</label>
-              <input type="time" id="time" name="time" required />
-            </div>
-
-            <button type="submit" class="submit-btn">Submit</button>
-          </form>
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Ready to grow your business with a professional website?</h2>
+            <p>
+              Get started today with transparent pricing, a simple process, and
+              a website designed to build trust and drive enquiries.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="cta-white" href="package.html">Get Started →</a>
+            <a class="cta-ghost" href="feedback.html">Free consultation</a>
+          </div>
         </div>
-      </section>
-      <!-- home div -->
-    </div>
+      </div>
+    </section>
 
-    <!-- Sticky Call Button -->
+    <!-- Optional sticky call -->
     <a href="tel:+447540296005" class="call-btn">📞 Call Now</a>
 
-    <!-- footer -->
+    <!-- footer component -->
     <site-footer></site-footer>
+
+    <!-- Strong green footer (keeps your structure; styles applied above) -->
     <footer>
-      <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+      <div class="footer-inner">
+        <p>&copy; 2025 CheapWeb. All rights reserved.</p>
+      </div>
     </footer>
 
-    <!-- Cookie banner MUST be before scripts -->
-    <div
-      id="cookie-banner"
-      class="cookie-banner"
-      role="dialog"
-      aria-live="polite"
-      aria-label="Cookie consent"
-    >
-      <div class="cookie-inner">
-        <div class="cookie-text">
-          <h3>Cookie Usage.</h3>
-          <p>
-            We use cookies to improve your browsing experience, analyze site
-            traffic, and support our services. You can accept or reject
-            non-essential cookies at any time.
-          </p>
-        </div>
-        <div class="cookie-actions">
-          <button
-            id="accept-cookies"
-            class="cookie-btn cookie-btn--dark"
-            type="button"
-          >
-            Accept all
-          </button>
-          <button
-            id="reject-cookies"
-            class="cookie-btn cookie-btn--light"
-            type="button"
-          >
-            Reject all
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- script -->
     <script src="components/footer.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script src="script.js"></script>
   </body>
 </html>
